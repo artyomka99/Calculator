@@ -70,12 +70,4 @@ public class Command {
             }
         }
     }
-
-    public String getUserInput() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter a substring to search for: ");
-        String input = scanner.nextLine();
-        scanner.close();
-        return input;
-    }
 }
