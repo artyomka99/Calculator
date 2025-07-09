@@ -6,8 +6,23 @@ public class PersonService {
     public void generatePersons() {
         List<Person> persons = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
+        Faker faker = new Faker(new Locle("ru"));
+        Random random = new Random();
 
-        while (true) {
+        System.out println("Какое количество человек хотели бы создать ?");
+        int count = scanner.nextInt();
+
+        for (int i = 0; i < count; i++){
+            String name = faker.name().fullName();
+            int age = random.nextInt(100) + 1;
+            persons.add(new Person(name, age));
+        }
+        System.out.println("Список созданых людей:");
+        for (Person person : persons){
+            System.out.println(person);
+        }
+
+        /*while (true) {
             System.out.println("\n1. Создать человека");
             System.out.println("2. Показать всех");
             System.out.println("3. Выйти");
@@ -49,6 +64,6 @@ public class PersonService {
                 default:
                     System.out.println("Неверный ввод. Пожалуйста, попробуйте снова.");
             }
-        }
+        }*/
     }
 }
