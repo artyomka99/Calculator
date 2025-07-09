@@ -9,7 +9,7 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Имя " + name + ", Возраст " + age;
+        return "Имя: " + name + ", Возраст: " + age;
     }
 }
 

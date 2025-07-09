@@ -1,15 +1,17 @@
+import com.github.javafaker.Faker;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 public class PersonService {
     public void generatePersons() {
         List<Person> persons = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
-        Faker faker = new Faker(new Locle("ru"));
+        Faker faker = new Faker();
         Random random = new Random();
 
-        System.out println("Какое количество человек хотели бы создать ?");
+        System.out.println ("Какое количество человек хотели бы создать ?");
         int count = scanner.nextInt();
 
         for (int i = 0; i < count; i++){
