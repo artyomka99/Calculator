@@ -1,6 +1,6 @@
 public class Person {
-    private String name;
-    private int age;
+    private final String name;
+    private final int age;
     private Animal.Pet pet;
 
     public Person(String name, int age) {
@@ -16,7 +16,7 @@ public class Person {
 
     @Override
     public String toString() {
-        String petInfo = (pet != null) ? "Питомец: " + pet.toString() : "Без питомца";
+        String petInfo = (pet != null) ? "Питомец: " + pet : "Без питомца";
         return name + " (возраст: " + age + ") — " + petInfo;
     }
 }
