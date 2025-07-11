@@ -6,7 +6,7 @@ public class Main {
         CalculatorService calculatorService = new CalculatorService();
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Выберите действие: \n1 - Работа с людьми, \n2 - Калькулятор \nВаш выбор: ");
+        System.out.print("Выберите действие: \n1 - Работа с людьми \n2 - Калькулятор \nВаш выбор: ");
         String choice = scanner.nextLine();
 
         switch (choice) {
