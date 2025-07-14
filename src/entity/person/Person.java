@@ -1,16 +1,20 @@
+package entity.person;
+
+import entity.pet.Pet;
+
 public class Person {
     private final String name;
     private final int age;
-    private Animal.Pet pet;
+    private Pet pet;
 
     public Person(String name, int age) {
         this.name = name;
         this.age = age;
     }
-    public void setPet(Animal.Pet pet){
+    public void setPet(Pet pet){
         this.pet = pet;
     }
-    public Animal.Pet getPet(){
+    public Pet getPet(){
         return pet;
     }
 

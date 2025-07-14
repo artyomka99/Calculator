@@ -1,29 +1,29 @@
-### IntelliJ IDEA ###
-out/
-!**/src/main/**/out/
-!**/src/test/**/out/
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
 
-### Eclipse ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-bin/
-!**/src/main/**/bin/
-!**/src/test/**/bin/
+# Сборка Gradle
+/build/
+.gradle/
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
+# Сборка Maven
+/target/
 
-### VS Code ###
-.vscode/
+# Логи
+*.log
 
-### Mac OS ###
+# Кэш, временные файлы
+*.class
+*.jar
+*.war
+*.ear
+*.tmp
+*.swp
+
+# OS
 .DS_Store
+Thumbs.db
+
+# Тестовые отчёты
+/test-output/

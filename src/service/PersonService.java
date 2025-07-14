@@ -1,4 +1,8 @@
+package service;
+
 import com.github.javafaker.Faker;
+import entity.person.Person;
+import entity.pet.*;
 
 import java.util.*;
 
@@ -66,12 +70,12 @@ public class PersonService {
             int choice = scanner.nextInt();
             scanner.nextLine();
 
-            Animal.Pet pet;
+            Pet pet;
             switch (choice) {
-                case 1 -> pet = new Animal.Dog(petName, petAge, petBreed);
-                case 2 -> pet = new Animal.Cat(petName, petAge, petBreed);
-                case 3 -> pet = new Animal.Mouse(petName, petAge, petBreed);
-                case 4 -> pet = new Animal.Rat(petName, petAge, petBreed);
+                case 1 -> pet = new Dog(petName, petAge, petBreed);
+                case 2 -> pet = new Cat(petName, petAge, petBreed);
+                case 3 -> pet = new Mouse(petName, petAge, petBreed);
+                case 4 -> pet = new Rat(petName, petAge, petBreed);
                 default -> {
                     System.out.println("Неверный выбор.");
                     continue;
