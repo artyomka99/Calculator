@@ -83,6 +83,5 @@ public class CalculatorService {
             continueOperation = again.equalsIgnoreCase("да");
         }
         System.out.println("Программа завершена.");
-        scanner.close();
     }
 }

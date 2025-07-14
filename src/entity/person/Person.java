@@ -3,18 +3,22 @@ package entity.person;
 import entity.pet.Pet;
 
 public class Person {
-    private final String name;
-    private final int age;
+    private String name;
+    private int age;
     private Pet pet;
+
+    public Person() {}
 
     public Person(String name, int age) {
         this.name = name;
         this.age = age;
     }
-    public void setPet(Pet pet){
+
+    public void setPet(Pet pet) {
         this.pet = pet;
     }
-    public Pet getPet(){
+
+    public Pet getPet() {
         return pet;
     }
 

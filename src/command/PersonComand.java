@@ -13,7 +13,7 @@ public class PersonComand implements Command {
 
     @Override
     public String getDescription() {
-        return "Создание людей и их характеристик";
+        return "Создание людей и их питомцев";
     }
 
     @Override
