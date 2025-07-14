@@ -1,26 +1,33 @@
-import service.CalculatorService;
-import service.PersonService;
+import command.CalculatorCommand;
+import command.Command;
+import command.PersonComand;
 
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Main {
+
+    static HashMap<Long, Command> commands = new HashMap<>();
+
+    static {
+        Command calculator = commands.put(0L, new CalculatorCommand());
+        Command person = commands.put(1L, new PersonComand());
+    }
+
     public static void main(String[] args) {
-        PersonService personService = new PersonService();
-        CalculatorService calculatorService = new CalculatorService();
+        System.out.println("Выберите действие:");
+        commands.forEach((key, command) ->
+                System.out.println(key + ": " + command.getDescription())
+        );
+        System.out.println("Введите номер команды:");
         Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Выберите действие: \n1 - Работа с людьми \n2 - Калькулятор \nВаш выбор: ");
-        String choice = scanner.nextLine();
-
-        switch (choice) {
-            case "1":
-                personService.generatePersons();
-                break;
-            case "2":
-                calculatorService.startCalculator();
-                break;
-            default:
-                System.out.println("Неверный выбор. Пожалуйста, попробуйте снова.");
+        Long commandId = scanner.nextLong();
+        Command command = commands.get(commandId);
+        if (command != null) {
+            command.execute();
+        } else {
+            System.out.println("Команда не найдена");
         }
     }
 }
+
