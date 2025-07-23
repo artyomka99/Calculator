@@ -8,7 +8,7 @@ public class CalculatorCommand implements Command {
 
     @Override
     public Long getId() {
-        return 0L;
+        return 1L;
     }
 
     @Override

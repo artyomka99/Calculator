@@ -5,6 +5,8 @@ public class Cat implements Pet {
     private int age;
     private String breed;
 
+    public Cat() {}
+
     public Cat(String name, int age, String breed) {
         this.name = name;
         this.age = age;

@@ -7,7 +7,8 @@ public class Person {
     private int age;
     private Pet pet;
 
-    public Person() {}
+    public Person() {
+    }
 
     public Person(String name, int age) {
         this.name = name;
@@ -26,6 +27,22 @@ public class Person {
     public String toString() {
         String petInfo = (pet != null) ? "Питомец: " + pet : "Без питомца";
         return name + " (возраст: " + age + ") — " + petInfo;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 }
 

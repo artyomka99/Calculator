@@ -5,6 +5,8 @@ public class Mouse implements Pet{
     private int age;
     private String breed;
 
+    public Mouse() {}
+
     public Mouse(String name, int age, String breed) {
         this.name = name;
         this.age = age;

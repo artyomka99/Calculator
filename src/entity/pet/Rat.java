@@ -5,6 +5,8 @@ public class Rat implements Pet{
     private int age;
     private String breed;
 
+    public Rat() {}
+
     public Rat(String name, int age, String breed) {
         this.name = name;
         this.age = age;
@@ -25,7 +27,7 @@ public class Rat implements Pet{
 
     @Override
     public String toString() {
-        return name + "(" + age + " лет," + breed + ")";
+        return name + " (" + age + " лет," + breed + ")";
     }
 }
 
