@@ -7,13 +7,9 @@ import java.util.List;
 import java.util.Scanner;
 
 public class PetService {
-    private final List<Person> persons = new ArrayList<>();
+    private final List<Person> persons = PersonService.persons;
     private final Scanner scanner = new Scanner(System.in);
-    PersonService personService;
-
-    public PetService(PersonService personService) {
-        this.personService = personService;
-    }
+    private final PersonService personService = new PersonService();
 
     public void assignPetsToPersons() {
         if (persons.isEmpty()) {

@@ -3,19 +3,18 @@ package service;
 import com.opencsv.bean.CsvToBeanBuilder;
 import com.opencsv.bean.StatefulBeanToCsvBuilder;
 import entity.person.Person;
-import entity.person.PersonCsvView;
+import service.csv.dto.PersonCsvView;
 
 import java.io.File;
 import java.io.IOException;
 import java.io.Reader;
 import java.io.Writer;
 import java.nio.file.Files;
-import java.util.ArrayList;
 import java.util.List;
 
 public class CSVService {
     private final String CSV_FILE = "persons.csv";
-    private final List<Person> persons = new ArrayList<>();
+    private final List<Person> persons = PersonService.persons ;
 
     public void saveToCsv() {
         try (Writer writer = Files.newBufferedWriter(new File(CSV_FILE).toPath())) {

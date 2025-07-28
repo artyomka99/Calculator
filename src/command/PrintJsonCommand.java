@@ -7,11 +7,7 @@ import service.PersonService;
 import java.util.List;
 
 public class PrintJsonCommand implements Command {
-    JSONService jsonService;
-    public PrintJsonCommand(PersonService personService) {
-        List<Person> persons = personService.getPersons();
-        this.jsonService = new JSONService(persons);
-    }
+    JSONService jsonService = new JSONService();
 
 
     @Override

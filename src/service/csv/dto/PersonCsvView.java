@@ -1,6 +1,7 @@
-package entity.person;
+package service.csv.dto;
 
 import com.opencsv.bean.CsvBindByName;
+import entity.person.Person;
 
 public class PersonCsvView {
 

@@ -7,13 +7,7 @@ import service.PersonService;
 import java.util.List;
 
 public class LoadFromJsonCommand implements Command {
-
-    JSONService jsonService;
-
-    public LoadFromJsonCommand(PersonService personService) {
-        List<Person> persons = personService.getPersons();
-        this.jsonService = new JSONService(persons);
-    }
+    private final JSONService jsonService = new JSONService();
 
     @Override
     public Long getId() {

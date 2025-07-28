@@ -3,11 +3,7 @@ package command;
 import service.PersonService;
 
 public class PrintPersonCommand implements Command {
-    private final PersonService personService;
-
-    public PrintPersonCommand(PersonService personService) {
-        this.personService = personService;
-    }
+    private final PersonService personService = new PersonService();
 
     @Override
     public Long getId() {

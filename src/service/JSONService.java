@@ -12,11 +12,7 @@ import java.util.List;
 public class JSONService {
     private final ObjectMapper objectMapper = new ObjectMapper();
     private final String JSON_FILE = "persons.json";
-    private final List<Person> persons;
-
-    public JSONService(List<Person> persons) {
-        this.persons = persons;
-    }
+    private final List<Person> persons = PersonService.persons;
 
     public void saveToJson() {
         try {

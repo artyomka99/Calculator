@@ -7,11 +7,7 @@ import service.PersonService;
 import java.util.List;
 
 public class SaveToJsonCommand implements Command {
-    JSONService jsonService;
-    public SaveToJsonCommand(PersonService personService) {
-        List<Person> persons = personService.getPersons();
-        this.jsonService = new JSONService(persons);
-    }
+    JSONService jsonService = new JSONService();
 
     @Override
     public Long getId() {

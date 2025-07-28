@@ -6,12 +6,7 @@ import service.PersonService;
 import service.PetService;
 
 public class PetCommand implements Command {
-    private final PetService petService;
-
-    public PetCommand(PetService petService) {
-        this.petService = petService;
-    }
-
+    private final PetService petService = new PetService();
 
     @Override
     public Long getId() {
