@@ -32,7 +32,6 @@ public class CSVService {
                     .withType(PersonCsvView.class)
                     .build()
                     .parse();
-            persons.clear();
             csvList.forEach(view -> persons.add(view.toPerson()));
             System.out.println("Загружено из CSV.");
         } catch (Exception e) {

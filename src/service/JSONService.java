@@ -26,7 +26,6 @@ public class JSONService {
         try {
             File file = new File(JSON_FILE);
             if (file.exists()) {
-                persons.clear();
                 persons.addAll(objectMapper.readValue(file, new TypeReference<>() {}));
                 System.out.println("Загружено из JSON.");
             } else {

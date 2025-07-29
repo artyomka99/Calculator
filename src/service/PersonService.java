@@ -10,7 +10,7 @@ public class PersonService {
     private final Scanner scanner = new Scanner(System.in);
     private final Faker faker = new Faker();
     private final Random random = new Random();
-    public static List<Person> persons = new ArrayList<>();
+    public static final List<Person> persons = new ArrayList<>();
 
     public void generatePersons() {
         System.out.print("Сколько людей хотите создать? ");
