@@ -1,13 +1,9 @@
 package command;
 
-import entity.person.Person;
 import service.JSONService;
-import service.PersonService;
-
-import java.util.List;
 
 public class SaveToJsonCommand implements Command {
-    JSONService jsonService = new JSONService();
+    private final JSONService jsonService = new JSONService();
 
     @Override
     public Long getId() {

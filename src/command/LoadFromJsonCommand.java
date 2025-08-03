@@ -1,10 +1,6 @@
 package command;
 
-import entity.person.Person;
 import service.JSONService;
-import service.PersonService;
-
-import java.util.List;
 
 public class LoadFromJsonCommand implements Command {
     private final JSONService jsonService = new JSONService();

@@ -21,7 +21,7 @@ public class PersonCsvView {
         }
 
         public Person toPerson() {
-            return new Person(name, age);
+            return new Person();
         }
     }
 

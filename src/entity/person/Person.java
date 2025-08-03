@@ -1,49 +1,30 @@
 package entity.person;
 
 import entity.pet.Pet;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Person {
     private String name;
     private int age;
-    private Pet pet;
+    private List<Pet> pets = new ArrayList<>();
 
-    public Person() {
-    }
-
-    public Person(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
-
-    public void setPet(Pet pet) {
-        this.pet = pet;
-    }
-
-    public Pet getPet() {
-        return pet;
+    public void addPet(Pet pet) {
+        pets.add(pet);
     }
 
     @Override
     public String toString() {
-        String petInfo = (pet != null) ? "Питомец: " + pet : "Без питомца";
+        String petInfo = (pets != null) ? "Питомец: " + pets : "Без питомца";
         return name + " (возраст: " + age + ") — " + petInfo;
     }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
 }
-
-

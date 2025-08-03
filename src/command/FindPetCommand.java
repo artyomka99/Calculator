@@ -1,25 +1,22 @@
 package command;
 
-import entity.person.Person;
-import entity.pet.Pet;
-import service.PersonService;
 import service.PetService;
 
-public class PetCommand implements Command {
+public class FindPetCommand implements Command {
     private final PetService petService = new PetService();
 
     @Override
     public Long getId() {
-        return 3L;
+        return 13L;
     }
 
     @Override
     public String getDescription() {
-        return "Управление питомцами";
+        return "Поиск питомца";
     }
 
     @Override
     public void execute() {
-        petService.assignPetsToPersons();
+        petService.findPetsByParams();
     }
 }

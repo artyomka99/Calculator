@@ -1,7 +1,4 @@
-import command.CalculatorCommand;
-import command.Command;
-import command.PersonCommand;
-import command.PetCommand;
+import command.*;
 import service.PersonService;
 import service.PetService;
 
@@ -16,14 +13,17 @@ public class Main {
     static {
         Command calculator = commands.put(1L, new CalculatorCommand());
         Command person = commands.put(2L, new PersonCommand());
-        Command pet = commands.put(3L, new PetCommand());
-        Command saveToJson = commands.put(4L, new command.SaveToJsonCommand());
-        Command saveToCsv = commands.put(5L, new command.SaveToCsvCommand());
-        Command loadFromJson = commands.put(6L, new command.LoadFromJsonCommand());
-        Command loadFromCsv = commands.put(7L, new command.LoadFromCsvCommand());
-        Command printPerson = commands.put(8L, new command.PrintPersonCommand());
-        Command printJsonFile = commands.put(9L, new command.PrintJsonCommand());
-        Command printCsvFile = commands.put(10L, new command.PrintCsvCommand());
+        Command pet = commands.put(3L, new GeneratePet());
+        Command saveToJson = commands.put(4L, new SaveToJsonCommand());
+        Command saveToCsv = commands.put(5L, new SaveToCsvCommand());
+        Command loadFromJson = commands.put(6L, new LoadFromJsonCommand());
+        Command loadFromCsv = commands.put(7L, new LoadFromCsvCommand());
+        Command printPerson = commands.put(8L, new PrintPersonCommand());
+        Command printJsonFile = commands.put(9L, new PrintJsonCommand());
+        Command printCsvFile = commands.put(10L, new PrintCsvCommand());
+        Command printPet = commands.put(11L, new PrintePetCommand());
+        Command petToPerson = commands.put(12L, new PetToPersonComannnd());
+        Command findPet = commands.put(13L, new FindPetCommand());
     }
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

@@ -1,7 +1,9 @@
 package command;
 
+import lombok.Data;
 import service.CalculatorService;
 
+@Data
 public class CalculatorCommand implements Command {
 
     private final CalculatorService calculatorService = new CalculatorService();

@@ -3,7 +3,7 @@ package command;
 import service.CSVService;
 
 public class SaveToCsvCommand implements Command {
-    CSVService csvService = new CSVService();
+    private final CSVService csvService = new CSVService();
     @Override
     public Long getId() {
         return 5L;

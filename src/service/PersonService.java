@@ -2,15 +2,17 @@ package service;
 
 import com.github.javafaker.Faker;
 import entity.person.Person;
+import service.repository.PersonRepository;
 
-import java.util.*;
+import java.util.Random;
+import java.util.Scanner;
 
 public class PersonService {
 
     private final Scanner scanner = new Scanner(System.in);
     private final Faker faker = new Faker();
     private final Random random = new Random();
-    public static final List<Person> persons = new ArrayList<>();
+    private final PersonRepository personRepository = new PersonRepository();
 
     public void generatePersons() {
         System.out.print("Сколько людей хотите создать? ");
@@ -20,7 +22,7 @@ public class PersonService {
         for (int i = 0; i < count; i++) {
             String name = faker.name().fullName();
             int age = random.nextInt(100) + 1;
-            persons.add(new Person(name, age));
+            personRepository.save(new Person(name, age, null));
         }
 
         System.out.println("Люди успешно созданы!");
@@ -28,8 +30,9 @@ public class PersonService {
 
     public void printPersons() {
         System.out.println("\nСписок людей:");
-        for (int i = 0; i < persons.size(); i++) {
-            System.out.println((i + 1) + ". " + persons.get(i));
+        int i = 1;
+        for (Person person : personRepository.findAll()) {
+            System.out.println((i++) + ". " + person);
         }
     }
 }
