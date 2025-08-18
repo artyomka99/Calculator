@@ -3,6 +3,7 @@ package service;
 import com.opencsv.bean.CsvToBeanBuilder;
 import com.opencsv.bean.StatefulBeanToCsvBuilder;
 import entity.person.Person;
+import repository.PersonRepository;
 import service.csv.dto.PersonCsvView;
 
 import java.io.File;
@@ -14,11 +15,11 @@ import java.util.List;
 
 public class CSVService {
     private final String CSV_FILE = "persons.csv";
-    private final List<Person> persons = PersonService.persons ;
+    private final PersonRepository personRepository = PersonRepository.getInstance();;
 
     public void saveToCsv() {
         try (Writer writer = Files.newBufferedWriter(new File(CSV_FILE).toPath())) {
-            var beans = persons.stream().map(PersonCsvView::fromPerson).toList();
+            var beans = personRepository.getPersons().stream().map(PersonCsvView::fromPerson).toList();
             new StatefulBeanToCsvBuilder<PersonCsvView>(writer).build().write(beans);
             System.out.println("Сохранено в CSV.");
         } catch (Exception e) {
@@ -32,7 +33,7 @@ public class CSVService {
                     .withType(PersonCsvView.class)
                     .build()
                     .parse();
-            csvList.forEach(view -> persons.add(view.toPerson()));
+            csvList.forEach(view -> personRepository.getPersons().add(view.toPerson()));
             System.out.println("Загружено из CSV.");
         } catch (Exception e) {
             System.out.println("Ошибка при чтении CSV: " + e.getMessage());

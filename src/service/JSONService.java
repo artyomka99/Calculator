@@ -3,6 +3,7 @@ package service;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import entity.person.Person;
+import repository.PersonRepository;
 
 import java.io.File;
 import java.io.IOException;
@@ -12,11 +13,11 @@ import java.util.List;
 public class JSONService {
     private final ObjectMapper objectMapper = new ObjectMapper();
     private final String JSON_FILE = "persons.json";
-    private final List<Person> persons = PersonService.persons;
+    private final PersonRepository personRepository = PersonRepository.getInstance();
 
     public void saveToJson() {
         try {
-            objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File(JSON_FILE), persons);
+            objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File(JSON_FILE), personRepository.getPersons());
             System.out.println("Сохранено в JSON.");
         } catch (IOException e) {
             System.out.println("Ошибка при сохранении JSON: " + e.getMessage());
@@ -26,7 +27,7 @@ public class JSONService {
         try {
             File file = new File(JSON_FILE);
             if (file.exists()) {
-                persons.addAll(objectMapper.readValue(file, new TypeReference<>() {}));
+                personRepository.getPersons().addAll(objectMapper.readValue(file, new TypeReference<>() {}));
                 System.out.println("Загружено из JSON.");
             } else {
                 System.out.println("Файл JSON не найден.");

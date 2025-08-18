@@ -2,6 +2,7 @@ package service;
 
 import entity.person.Person;
 import entity.pet.*;
+import repository.PersonRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,9 +11,10 @@ import java.util.Scanner;
 
 public class PetService {
     private final List<Pet> pets = new ArrayList<>();
-    private final List<Person> persons = PersonService.persons;
+    private final PersonRepository personRepository = PersonRepository.getInstance();
     private final Scanner scanner = new Scanner(System.in);
-    private final PersonService personService = new PersonService();
+
+
 
     private final String[] names = {"Барсик", "Мурка", "Шарик", "Том", "Лаки", "Рекс", "Снежок", "Рыжик"};
     private final String[] breeds = {"Сиамский", "Бульдог", "Мейн-кун", "Доберман", "Сфинкс", "Дворовый"};
@@ -56,18 +58,19 @@ public class PetService {
     }
 
     public void assignPetsToPersons() {
+
         if (pets.isEmpty()) {
             System.out.println("Сначала создайте питомцев.");
             return;
         }
 
-        if (persons.isEmpty()) {
+        if (personRepository.getPersons().isEmpty()) {
             System.out.println("Сначала создайте людей.");
             return;
         }
 
         for (Pet pet : pets) {
-            Person person = persons.get(random.nextInt(persons.size()));
+            Person person = personRepository.getPersons().get(random.nextInt(personRepository.getPersons().size()));
             person.addPet(pet);
             System.out.printf("Питомец %s назначен %s%n", pet.getName(), person.getName());
         }
@@ -89,7 +92,7 @@ public class PetService {
 
         List<Pet> found = new ArrayList<>();
 
-        for (Person person : persons) {
+        for (Person person : personRepository.getPersons()) {
             for (Pet pet : person.getPets()) {
                 boolean matches =
                         (name.isEmpty() || pet.getName().equalsIgnoreCase(name)) &&

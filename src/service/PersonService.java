@@ -2,7 +2,7 @@ package service;
 
 import com.github.javafaker.Faker;
 import entity.person.Person;
-import service.repository.PersonRepository;
+import repository.PersonRepository;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -12,7 +12,8 @@ public class PersonService {
     private final Scanner scanner = new Scanner(System.in);
     private final Faker faker = new Faker();
     private final Random random = new Random();
-    private final PersonRepository personRepository = new PersonRepository();
+    private final PersonRepository personRepository = PersonRepository.getInstance();
+
 
     public void generatePersons() {
         System.out.print("Сколько людей хотите создать? ");
