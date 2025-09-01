@@ -7,13 +7,15 @@ import lombok.Setter;
 import java.util.ArrayList;
 import java.util.List;
 
-@Getter @Setter
+@Getter
+@Setter
 public class PersonRepository {
     private static PersonRepository instance;
-
     private final List<Person> persons = new ArrayList<>();
+    private Long nextId = 1L;
 
-    private PersonRepository() { }
+    private PersonRepository() {
+    }
 
     public static synchronized PersonRepository getInstance() {
         if (instance == null) {
@@ -23,11 +25,28 @@ public class PersonRepository {
     }
 
     public void save(Person person) {
+        if (person.getId() == null){
+            person.setId(nextId++);
+        }
         persons.add(person);
     }
 
     public List<Person> findAll() {
         return new ArrayList<>(persons);
+    }
+
+    public Person findById(Long id) {
+        for (Person person :persons) {
+            if (person != null && person.getId().equals(id)) {
+                return person;
+            }
+        }
+        return null;
+    }
+    public boolean deleteById(Long id) {
+        return persons.removeIf(person ->
+                person != null && person.getId().equals(id)
+        );
     }
 
     public void clear() {

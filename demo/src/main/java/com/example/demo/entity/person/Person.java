@@ -14,9 +14,16 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Person {
+    private Long id;
     private String name;
     private int age;
     private List<Pet> pets = new ArrayList<>();
+
+    public Person(String name, int age, List<Pet> pets) {
+        this.name = name;
+        this.age = age;
+        this.pets = pets;
+    }
 
     public void addPet(Pet pet) {
         pets.add(pet);

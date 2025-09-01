@@ -17,18 +17,20 @@ public class PersonService {
     private final PersonRepository personRepository = PersonRepository.getInstance();
 
 
+
     public void generatePersons() {
         System.out.print("Сколько людей хотите создать? ");
         int count = scanner.nextInt();
         scanner.nextLine();
+        generatePersonsWithCount(count);
+    }
 
+    public void generatePersonsWithCount(int count) {
         for (int i = 0; i < count; i++) {
             String name = faker.name().fullName();
             int age = random.nextInt(100) + 1;
             personRepository.save(new Person(name, age, null));
         }
-
-        System.out.println("Люди успешно созданы!");
     }
 
     public void printPersons() {

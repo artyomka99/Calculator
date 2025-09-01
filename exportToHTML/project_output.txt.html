@@ -1,0 +1,1716 @@
+<html>
+<head>
+<title>project_output.txt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #bcbec4;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+project_output.txt</font>
+</center></td></tr></table>
+<pre><span class="s0">================================================================================</span>
+<span class="s0">ПРОЕКТ: Calculator2</span>
+<span class="s0">ПУТЬ: /c/Users/Родион/IdeaProjects/Calculator2</span>
+<span class="s0">ДАТА ЭКСПОРТА: 2025-08-19 13:35:35</span>
+<span class="s0">================================================================================</span>
+
+<span class="s0">СТРУКТУРА ПРОЕКТА:</span>
+<span class="s0">--------------------------------------------------------------------------------</span>
+<span class="s0">├── 📁 .gigaide/</span>
+<span class="s0">├── 📁 src/</span>
+<span class="s0">│   ├── 📁 command/</span>
+<span class="s0">│   │   ├── 📄 CalculatorCommand.java (499 B)</span>
+<span class="s0">│   │   ├── 📄 Command.java (121 B)</span>
+<span class="s0">│   │   ├── 📄 FindPetCommand.java (436 B)</span>
+<span class="s0">│   │   ├── 📄 GeneratePet.java (436 B)</span>
+<span class="s0">│   │   ├── 📄 LoadFromCsvCommand.java (420 B)</span>
+<span class="s0">│   │   ├── 📄 LoadFromJsonCommand.java (444 B)</span>
+<span class="s0">│   │   ├── 📄 PersonCommand.java (452 B)</span>
+<span class="s0">│   │   ├── 📄 PetToPersonComannnd.java (470 B)</span>
+<span class="s0">│   │   ├── 📄 PrintCsvCommand.java (423 B)</span>
+<span class="s0">│   │   ├── 📄 PrintJsonCommand.java (446 B)</span>
+<span class="s0">│   │   ├── 📄 PrintPersonCommand.java (447 B)</span>
+<span class="s0">│   │   ├── 📄 PrintePetCommand.java (453 B)</span>
+<span class="s0">│   │   ├── 📄 SaveToCsvCommand.java (414 B)</span>
+<span class="s0">│   │   └── 📄 SaveToJsonCommand.java (438 B)</span>
+<span class="s0">│   ├── 📁 entity/</span>
+<span class="s0">│   │   ├── 📁 person/</span>
+<span class="s0">│   │   │   └── 📄 Person.java (694 B)</span>
+<span class="s0">│   │   └── 📁 pet/</span>
+<span class="s0">│   │       ├── 📄 Cat.java (401 B)</span>
+<span class="s0">│   │       ├── 📄 Dog.java (397 B)</span>
+<span class="s0">│   │       ├── 📄 Mouse.java (399 B)</span>
+<span class="s0">│   │       ├── 📄 Pet.java (120 B)</span>
+<span class="s0">│   │       └── 📄 Rat.java (397 B)</span>
+<span class="s0">│   ├── 📁 repository/</span>
+<span class="s0">│   │   └── 📄 PersonRepository.java (844 B)</span>
+<span class="s0">│   ├── 📁 service/</span>
+<span class="s0">│   │   ├── 📁 csv/</span>
+<span class="s0">│   │   │   └── 📁 dto/</span>
+<span class="s0">│   │   │       └── 📄 PersonCsvView.java (587 B)</span>
+<span class="s0">│   │   ├── 📄 CSVService.java (1 KB)</span>
+<span class="s0">│   │   ├── 📄 CalculatorService.java (3 KB)</span>
+<span class="s0">│   │   ├── 📄 JSONService.java (1 KB)</span>
+<span class="s0">│   │   ├── 📄 PersonService.java (1 KB)</span>
+<span class="s0">│   │   └── 📄 PetService.java (4 KB)</span>
+<span class="s0">│   └── 📄 Main.java (2 KB)</span>
+<span class="s0">├── 📄 .gitignore (305 B)</span>
+<span class="s0">├── 📄 persons.csv (0 B)</span>
+<span class="s0">├── 📄 persons.json (350 B)</span>
+<span class="s0">├── 📄 pom.xml (1 KB)</span>
+<span class="s0">├── 📄 project-to-txt.sh (15 KB)</span>
+<span class="s0">└── 📄 project_output.txt (2 KB)</span>
+
+<span class="s0">================================================================================</span>
+
+<span class="s0">СОДЕРЖИМОЕ ФАЙЛОВ:</span>
+<span class="s0">================================================================================</span>
+
+
+<span class="s0">================================================================================</span>
+<span class="s0">ФАЙЛ: .gitignore</span>
+<span class="s0">РАЗМЕР: 305 B | ИЗМЕНЕН: ./.gitignore 74e6bfed00000000 255 3e72eff 4096 4096 124996863 33459765 33459765 18446744073709551615 -1</span>
+<span class="s0">2025-07-18 14:20:45.439547600</span>
+<span class="s0">--------------------------------------------------------------------------------</span>
+<span class="s0"># IntelliJ IDEA</span>
+<span class="s0">.idea/</span>
+<span class="s0">*.iml</span>
+<span class="s0">*.iws</span>
+
+<span class="s0"># Сборка Gradle</span>
+<span class="s0">/build/</span>
+<span class="s0">.gradle/</span>
+
+<span class="s0"># Сборка Maven</span>
+<span class="s0">/target/</span>
+
+<span class="s0"># Логи</span>
+<span class="s0">*.log</span>
+
+<span class="s0"># Кэш, временные файлы</span>
+<span class="s0">*.class</span>
+<span class="s0">*.jar</span>
+<span class="s0">*.war</span>
+<span class="s0">*.ear</span>
+<span class="s0">*.tmp</span>
+<span class="s0">*.swp</span>
+
+<span class="s0"># OS</span>
+<span class="s0">.DS_Store</span>
+<span class="s0">Thumbs.db</span>
+
+<span class="s0"># Тестовые отчёты</span>
+<span class="s0">/test-output/</span>
+
+<span class="s0">================================================================================</span>
+<span class="s0">ФАЙЛ: persons.csv</span>
+<span class="s0">РАЗМЕР: 0 B | ИЗМЕНЕН: ./persons.csv 74e6bfed00000000 255 3e72eff 4096 4096 124996863 33459760 33459760 18446744073709551615 -1</span>
+<span class="s0">2025-08-18 16:58:43.337276700</span>
+<span class="s0">--------------------------------------------------------------------------------</span>
+<span class="s0">[Бинарный файл - пропущен]</span>
+
+<span class="s0">================================================================================</span>
+<span class="s0">ФАЙЛ: persons.json</span>
+<span class="s0">РАЗМЕР: 350 B | ИЗМЕНЕН: ./persons.json 74e6bfed00000000 255 3e72eff 4096 4096 124996863 33459760 33459760 18446744073709551615 -1</span>
+<span class="s0">2025-08-18 13:57:08.580620800</span>
+<span class="s0">--------------------------------------------------------------------------------</span>
+<span class="s0">[ {</span>
+  <span class="s0">&quot;name&quot; : &quot;Maurice Marquardt&quot;,</span>
+  <span class="s0">&quot;age&quot; : 81,</span>
+  <span class="s0">&quot;pets&quot; : null</span>
+<span class="s0">}, {</span>
+  <span class="s0">&quot;name&quot; : &quot;Harland Hudson&quot;,</span>
+  <span class="s0">&quot;age&quot; : 55,</span>
+  <span class="s0">&quot;pets&quot; : null</span>
+<span class="s0">}, {</span>
+  <span class="s0">&quot;name&quot; : &quot;Hailey VonRueden&quot;,</span>
+  <span class="s0">&quot;age&quot; : 32,</span>
+  <span class="s0">&quot;pets&quot; : null</span>
+<span class="s0">}, {</span>
+  <span class="s0">&quot;name&quot; : &quot;Clarence Erdman III&quot;,</span>
+  <span class="s0">&quot;age&quot; : 12,</span>
+  <span class="s0">&quot;pets&quot; : null</span>
+<span class="s0">}, {</span>
+  <span class="s0">&quot;name&quot; : &quot;Edythe Nader&quot;,</span>
+  <span class="s0">&quot;age&quot; : 58,</span>
+  <span class="s0">&quot;pets&quot; : null</span>
+<span class="s0">} ]</span>
+<span class="s0">================================================================================</span>
+<span class="s0">ФАЙЛ: pom.xml</span>
+<span class="s0">РАЗМЕР: 1 KB | ИЗМЕНЕН: ./pom.xml 74e6bfed00000000 255 3e72eff 4096 4096 124996863 33459759 33459759 18446744073709551615 -1</span>
+<span class="s0">2025-08-18 16:56:15.979570900</span>
+<span class="s0">--------------------------------------------------------------------------------</span>
+<span class="s0">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;</span>
+         <span class="s0">xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+         <span class="s0">xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;</span>
+    <span class="s0">&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span>
+
+    <span class="s0">&lt;groupId&gt;com.example&lt;/groupId&gt;</span>
+    <span class="s0">&lt;artifactId&gt;people-generator&lt;/artifactId&gt;</span>
+    <span class="s0">&lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;</span>
+
+    <span class="s0">&lt;properties&gt;</span>
+        <span class="s0">&lt;maven.compiler.source&gt;21&lt;/maven.compiler.source&gt;</span>
+        <span class="s0">&lt;maven.compiler.target&gt;21&lt;/maven.compiler.target&gt;</span>
+    <span class="s0">&lt;/properties&gt;</span>
+
+    <span class="s0">&lt;build&gt;</span>
+        <span class="s0">&lt;sourceDirectory&gt;src&lt;/sourceDirectory&gt;</span>
+
+        <span class="s0">&lt;plugins&gt;</span>
+            <span class="s0">&lt;plugin&gt;</span>
+                <span class="s0">&lt;groupId&gt;org.codehaus.mojo&lt;/groupId&gt;</span>
+                <span class="s0">&lt;artifactId&gt;exec-maven-plugin&lt;/artifactId&gt;</span>
+                <span class="s0">&lt;version&gt;3.1.0&lt;/version&gt;</span>
+                <span class="s0">&lt;configuration&gt;</span>
+                    <span class="s0">&lt;mainClass&gt;Main&lt;/mainClass&gt;</span>
+                <span class="s0">&lt;/configuration&gt;</span>
+            <span class="s0">&lt;/plugin&gt;</span>
+        <span class="s0">&lt;/plugins&gt;</span>
+    <span class="s0">&lt;/build&gt;</span>
+
+    <span class="s0">&lt;dependencies&gt;</span>
+        <span class="s0">&lt;dependency&gt;</span>
+            <span class="s0">&lt;groupId&gt;com.github.javafaker&lt;/groupId&gt;</span>
+            <span class="s0">&lt;artifactId&gt;javafaker&lt;/artifactId&gt;</span>
+            <span class="s0">&lt;version&gt;1.0.2&lt;/version&gt;</span>
+        <span class="s0">&lt;/dependency&gt;</span>
+        <span class="s0">&lt;dependency&gt;</span>
+            <span class="s0">&lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt;</span>
+            <span class="s0">&lt;artifactId&gt;jackson-databind&lt;/artifactId&gt;</span>
+            <span class="s0">&lt;version&gt;2.17.0&lt;/version&gt;</span>
+        <span class="s0">&lt;/dependency&gt;</span>
+        <span class="s0">&lt;dependency&gt;</span>
+            <span class="s0">&lt;groupId&gt;com.opencsv&lt;/groupId&gt;</span>
+            <span class="s0">&lt;artifactId&gt;opencsv&lt;/artifactId&gt;</span>
+            <span class="s0">&lt;version&gt;5.9&lt;/version&gt;</span>
+        <span class="s0">&lt;/dependency&gt;</span>
+        <span class="s0">&lt;dependency&gt;</span>
+            <span class="s0">&lt;groupId&gt;org.projectlombok&lt;/groupId&gt;</span>
+            <span class="s0">&lt;artifactId&gt;lombok&lt;/artifactId&gt;</span>
+            <span class="s0">&lt;version&gt;1.18.32&lt;/version&gt;</span>
+            <span class="s0">&lt;scope&gt;provided&lt;/scope&gt;</span>
+        <span class="s0">&lt;/dependency&gt;</span>
+        <span class="s0">&lt;dependency&gt;</span>
+            <span class="s0">&lt;groupId&gt;org.reflections&lt;/groupId&gt;</span>
+            <span class="s0">&lt;artifactId&gt;reflections&lt;/artifactId&gt;</span>
+            <span class="s0">&lt;version&gt;0.10.2&lt;/version&gt;</span>
+        <span class="s0">&lt;/dependency&gt;</span>
+    <span class="s0">&lt;/dependencies&gt;</span>
+<span class="s0">&lt;/project&gt;</span>
+<span class="s0">================================================================================</span>
+<span class="s0">ФАЙЛ: project-to-txt.sh</span>
+<span class="s0">РАЗМЕР: 15 KB | ИЗМЕНЕН: ./project-to-txt.sh 74e6bfed00000000 255 3e72eff 4096 4096 124996863 33459759 33459759 18446744073709551615 -1</span>
+<span class="s0">2025-08-19 13:35:00.656821400</span>
+<span class="s0">--------------------------------------------------------------------------------</span>
+<span class="s0">#!/bin/bash</span>
+
+<span class="s0"># Конвертер проекта в TXT формат для Git Bash на Windows 11</span>
+<span class="s0"># Автор: Project to TXT Converter</span>
+<span class="s0"># Версия: 1.0</span>
+
+<span class="s0"># Цвета для вывода</span>
+<span class="s0">RED='\033[0;31m'</span>
+<span class="s0">GREEN='\033[0;32m'</span>
+<span class="s0">YELLOW='\033[1;33m'</span>
+<span class="s0">BLUE='\033[0;34m'</span>
+<span class="s0">CYAN='\033[0;36m'</span>
+<span class="s0">WHITE='\033[1;37m'</span>
+<span class="s0">NC='\033[0m' # No Color</span>
+
+<span class="s0"># Настройки по умолчанию</span>
+<span class="s0">PROJECT_PATH=&quot;.&quot;</span>
+<span class="s0">OUTPUT_FILE=&quot;project_output.txt&quot;</span>
+<span class="s0">OUTPUT_DIR=&quot;txt_output&quot;</span>
+<span class="s0">MAX_FILE_SIZE_MB=10</span>
+<span class="s0">INCLUDE_TREE=true</span>
+<span class="s0">INCLUDE_CONTENT=true</span>
+
+<span class="s0"># Расширения файлов для включения</span>
+<span class="s0">INCLUDE_EXTENSIONS=(</span>
+    <span class="s0">&quot;.py&quot; &quot;.js&quot; &quot;.html&quot; &quot;.css&quot; &quot;.java&quot; &quot;.cpp&quot; &quot;.c&quot; &quot;.h&quot;</span>
+    <span class="s0">&quot;.jsx&quot; &quot;.tsx&quot; &quot;.ts&quot; &quot;.json&quot; &quot;.xml&quot; &quot;.yaml&quot; &quot;.yml&quot;</span>
+    <span class="s0">&quot;.md&quot; &quot;.txt&quot; &quot;.sh&quot; &quot;.bat&quot; &quot;.ps1&quot; &quot;.sql&quot; &quot;.php&quot; &quot;.rb&quot;</span>
+    <span class="s0">&quot;.go&quot; &quot;.rs&quot; &quot;.swift&quot; &quot;.kt&quot; &quot;.scala&quot; &quot;.r&quot; &quot;.m&quot; &quot;.csv&quot;</span>
+    <span class="s0">&quot;.ini&quot; &quot;.config&quot; &quot;.env&quot; &quot;.gitignore&quot; &quot;.dockerfile&quot;</span>
+    <span class="s0">&quot;.vue&quot; &quot;.svelte&quot; &quot;.astro&quot; &quot;.prisma&quot; &quot;.graphql&quot;</span>
+<span class="s0">)</span>
+
+<span class="s0"># Папки для исключения</span>
+<span class="s0">EXCLUDE_DIRS=(</span>
+    <span class="s0">&quot;node_modules&quot; &quot;__pycache__&quot; &quot;.git&quot; &quot;venv&quot; &quot;env&quot;</span>
+    <span class="s0">&quot;.venv&quot; &quot;dist&quot; &quot;build&quot; &quot;.idea&quot; &quot;.vscode&quot; &quot;target&quot;</span>
+    <span class="s0">&quot;bin&quot; &quot;obj&quot; &quot;.pytest_cache&quot; &quot;.tox&quot; &quot;vendor&quot; &quot;packages&quot;</span>
+    <span class="s0">&quot;.vs&quot; &quot;Debug&quot; &quot;Release&quot; &quot;x64&quot; &quot;x86&quot; &quot;coverage&quot;</span>
+    <span class="s0">&quot;.next&quot; &quot;.nuxt&quot; &quot;.svelte-kit&quot; &quot;out&quot; &quot;.cache&quot;</span>
+<span class="s0">)</span>
+
+<span class="s0"># Бинарные расширения для исключения</span>
+<span class="s0">BINARY_EXTENSIONS=(</span>
+    <span class="s0">&quot;.exe&quot; &quot;.dll&quot; &quot;.so&quot; &quot;.dylib&quot; &quot;.pdf&quot; &quot;.doc&quot; &quot;.docx&quot;</span>
+    <span class="s0">&quot;.xls&quot; &quot;.xlsx&quot; &quot;.ppt&quot; &quot;.pptx&quot; &quot;.jpg&quot; &quot;.jpeg&quot; &quot;.png&quot;</span>
+    <span class="s0">&quot;.gif&quot; &quot;.bmp&quot; &quot;.ico&quot; &quot;.svg&quot; &quot;.mp3&quot; &quot;.mp4&quot; &quot;.avi&quot;</span>
+    <span class="s0">&quot;.mov&quot; &quot;.zip&quot; &quot;.rar&quot; &quot;.7z&quot; &quot;.tar&quot; &quot;.gz&quot; &quot;.jar&quot;</span>
+    <span class="s0">&quot;.war&quot; &quot;.ear&quot; &quot;.class&quot; &quot;.pyc&quot; &quot;.pyo&quot; &quot;.db&quot; &quot;.sqlite&quot;</span>
+    <span class="s0">&quot;.msi&quot; &quot;.cab&quot; &quot;.iso&quot; &quot;.img&quot; &quot;.vmdk&quot; &quot;.vhd&quot; &quot;.vhdx&quot;</span>
+    <span class="s0">&quot;.woff&quot; &quot;.woff2&quot; &quot;.ttf&quot; &quot;.eot&quot; &quot;.otf&quot;</span>
+<span class="s0">)</span>
+
+<span class="s0"># Счетчики</span>
+<span class="s0">FILES_PROCESSED=0</span>
+<span class="s0">FILES_SKIPPED=0</span>
+<span class="s0">TOTAL_SIZE=0</span>
+
+<span class="s0"># Функция для форматирования размера файла</span>
+<span class="s0">format_size() {</span>
+    <span class="s0">local size=$1</span>
+    <span class="s0">if [ $size -lt 1024 ]; then</span>
+        <span class="s0">echo &quot;${size} B&quot;</span>
+    <span class="s0">elif [ $size -lt 1048576 ]; then</span>
+        <span class="s0">echo &quot;$(( size / 1024 )) KB&quot;</span>
+    <span class="s0">elif [ $size -lt 1073741824 ]; then</span>
+        <span class="s0">echo &quot;$(( size / 1048576 )) MB&quot;</span>
+    <span class="s0">else</span>
+        <span class="s0">echo &quot;$(( size / 1073741824 )) GB&quot;</span>
+    <span class="s0">fi</span>
+<span class="s0">}</span>
+
+<span class="s0"># Функция проверки, является ли файл бинарным</span>
+<span class="s0">is_binary_file() {</span>
+    <span class="s0">local file=&quot;$1&quot;</span>
+    <span class="s0">local ext=&quot;${file##*.}&quot;</span>
+    <span class="s0">ext=&quot;.${ext,,}&quot; # Приводим к нижнему регистру</span>
+
+    <span class="s0">for binary_ext in &quot;${BINARY_EXTENSIONS[@]}&quot;; do</span>
+        <span class="s0">if [[ &quot;$ext&quot; == &quot;$binary_ext&quot; ]]; then</span>
+            <span class="s0">return 0</span>
+        <span class="s0">fi</span>
+    <span class="s0">done</span>
+    <span class="s0">return 1</span>
+<span class="s0">}</span>
+
+<span class="s0"># Функция проверки, нужно ли исключить директорию</span>
+<span class="s0">is_excluded_dir() {</span>
+    <span class="s0">local path=&quot;$1&quot;</span>
+
+    <span class="s0">for exclude_dir in &quot;${EXCLUDE_DIRS[@]}&quot;; do</span>
+        <span class="s0">if [[ &quot;$path&quot; == *&quot;/$exclude_dir/&quot;* ]] || [[ &quot;$path&quot; == *&quot;/$exclude_dir&quot; ]]; then</span>
+            <span class="s0">return 0</span>
+        <span class="s0">fi</span>
+    <span class="s0">done</span>
+    <span class="s0">return 1</span>
+<span class="s0">}</span>
+
+<span class="s0"># Функция проверки, нужно ли включить файл</span>
+<span class="s0">should_include_file() {</span>
+    <span class="s0">local file=&quot;$1&quot;</span>
+
+    <span class="s0"># Проверка на бинарный файл</span>
+    <span class="s0">if is_binary_file &quot;$file&quot;; then</span>
+        <span class="s0">return 1</span>
+    <span class="s0">fi</span>
+
+    <span class="s0"># Проверка на исключаемые директории</span>
+    <span class="s0">if is_excluded_dir &quot;$file&quot;; then</span>
+        <span class="s0">return 1</span>
+    <span class="s0">fi</span>
+
+    <span class="s0"># Проверка расширения</span>
+    <span class="s0">local ext=&quot;${file##*.}&quot;</span>
+    <span class="s0">ext=&quot;.${ext,,}&quot;</span>
+
+    <span class="s0">for include_ext in &quot;${INCLUDE_EXTENSIONS[@]}&quot;; do</span>
+        <span class="s0">if [[ &quot;$ext&quot; == &quot;$include_ext&quot; ]]; then</span>
+            <span class="s0">return 0</span>
+        <span class="s0">fi</span>
+    <span class="s0">done</span>
+
+    <span class="s0"># Если нет расширения, но это текстовый файл (например, Makefile, Dockerfile)</span>
+    <span class="s0">local basename=$(basename &quot;$file&quot;)</span>
+    <span class="s0">if [[ &quot;$basename&quot; == &quot;Makefile&quot; ]] || [[ &quot;$basename&quot; == &quot;Dockerfile&quot; ]] || [[ &quot;$basename&quot; == &quot;Jenkinsfile&quot; ]]; then</span>
+        <span class="s0">return 0</span>
+    <span class="s0">fi</span>
+
+    <span class="s0">return 1</span>
+<span class="s0">}</span>
+
+<span class="s0"># Функция для создания дерева проекта</span>
+<span class="s0">create_tree() {</span>
+    <span class="s0">local dir=&quot;$1&quot;</span>
+    <span class="s0">local prefix=&quot;$2&quot;</span>
+    <span class="s0">local is_last=&quot;$3&quot;</span>
+
+    <span class="s0">local items=()</span>
+    <span class="s0">local dirs=()</span>
+    <span class="s0">local files=()</span>
+
+    <span class="s0"># Собираем все элементы</span>
+    <span class="s0">while IFS= read -r -d '' item; do</span>
+        <span class="s0">if [ -d &quot;$item&quot; ]; then</span>
+            <span class="s0">local basename=$(basename &quot;$item&quot;)</span>
+            <span class="s0">if ! is_excluded_dir &quot;$item&quot;; then</span>
+                <span class="s0">dirs+=(&quot;$item&quot;)</span>
+            <span class="s0">fi</span>
+        <span class="s0">elif [ -f &quot;$item&quot; ]; then</span>
+            <span class="s0">if should_include_file &quot;$item&quot;; then</span>
+                <span class="s0">files+=(&quot;$item&quot;)</span>
+            <span class="s0">fi</span>
+        <span class="s0">fi</span>
+    <span class="s0">done &lt; &lt;(find &quot;$dir&quot; -maxdepth 1 -mindepth 1 -print0 2&gt;/dev/null | sort -z)</span>
+
+    <span class="s0"># Объединяем массивы</span>
+    <span class="s0">items=(&quot;${dirs[@]}&quot; &quot;${files[@]}&quot;)</span>
+
+    <span class="s0">local count=${#items[@]}</span>
+    <span class="s0">local index=0</span>
+
+    <span class="s0">for item in &quot;${items[@]}&quot;; do</span>
+        <span class="s0">index=$((index + 1))</span>
+        <span class="s0">local is_last_item=false</span>
+        <span class="s0">if [ $index -eq $count ]; then</span>
+            <span class="s0">is_last_item=true</span>
+        <span class="s0">fi</span>
+
+        <span class="s0">local basename=$(basename &quot;$item&quot;)</span>
+
+        <span class="s0">if [ -d &quot;$item&quot; ]; then</span>
+            <span class="s0">if $is_last_item; then</span>
+                <span class="s0">echo &quot;${prefix}└── 📁 ${basename}/&quot;</span>
+                <span class="s0">create_tree &quot;$item&quot; &quot;${prefix}    &quot; true</span>
+            <span class="s0">else</span>
+                <span class="s0">echo &quot;${prefix}├── 📁 ${basename}/&quot;</span>
+                <span class="s0">create_tree &quot;$item&quot; &quot;${prefix}│   &quot; false</span>
+            <span class="s0">fi</span>
+        <span class="s0">else</span>
+            <span class="s0">local size=$(stat -f%z &quot;$item&quot; 2&gt;/dev/null || stat -c%s &quot;$item&quot; 2&gt;/dev/null || echo &quot;0&quot;)</span>
+            <span class="s0">local formatted_size=$(format_size $size)</span>
+            <span class="s0">if $is_last_item; then</span>
+                <span class="s0">echo &quot;${prefix}└── 📄 ${basename} (${formatted_size})&quot;</span>
+            <span class="s0">else</span>
+                <span class="s0">echo &quot;${prefix}├── 📄 ${basename} (${formatted_size})&quot;</span>
+            <span class="s0">fi</span>
+        <span class="s0">fi</span>
+    <span class="s0">done</span>
+<span class="s0">}</span>
+
+<span class="s0"># Функция для безопасного чтения файла</span>
+<span class="s0">read_file_safely() {</span>
+    <span class="s0">local file=&quot;$1&quot;</span>
+    <span class="s0">local max_size=$((MAX_FILE_SIZE_MB * 1024 * 1024))</span>
+
+    <span class="s0"># Получаем размер файла</span>
+    <span class="s0">local size=$(stat -f%z &quot;$file&quot; 2&gt;/dev/null || stat -c%s &quot;$file&quot; 2&gt;/dev/null || echo &quot;0&quot;)</span>
+
+    <span class="s0">if [ $size -gt $max_size ]; then</span>
+        <span class="s0">echo &quot;[Файл пропущен - размер $(format_size $size) превышает лимит]&quot;</span>
+        <span class="s0">((FILES_SKIPPED++))</span>
+        <span class="s0">return 1</span>
+    <span class="s0">fi</span>
+
+    <span class="s0"># Пробуем прочитать файл</span>
+    <span class="s0">if file -b --mime-encoding &quot;$file&quot; 2&gt;/dev/null | grep -q &quot;binary&quot;; then</span>
+        <span class="s0">echo &quot;[Бинарный файл - пропущен]&quot;</span>
+        <span class="s0">((FILES_SKIPPED++))</span>
+        <span class="s0">return 1</span>
+    <span class="s0">fi</span>
+
+    <span class="s0"># Читаем содержимое</span>
+    <span class="s0">cat &quot;$file&quot; 2&gt;/dev/null || echo &quot;[Ошибка чтения файла]&quot;</span>
+    <span class="s0">return 0</span>
+<span class="s0">}</span>
+
+<span class="s0"># Функция конвертации в один файл</span>
+<span class="s0">convert_to_single_file() {</span>
+    <span class="s0">echo -e &quot;${CYAN}Начинаем конвертацию проекта в один TXT файл...${NC}&quot;</span>
+
+    <span class="s0">local project_name=$(basename &quot;$(realpath &quot;$PROJECT_PATH&quot;)&quot;)</span>
+    <span class="s0">local project_full_path=$(realpath &quot;$PROJECT_PATH&quot;)</span>
+
+    <span class="s0"># Начинаем запись в файл</span>
+    <span class="s0">{</span>
+        <span class="s0">echo &quot;================================================================================&quot;</span>
+        <span class="s0">echo &quot;ПРОЕКТ: $project_name&quot;</span>
+        <span class="s0">echo &quot;ПУТЬ: $project_full_path&quot;</span>
+        <span class="s0">echo &quot;ДАТА ЭКСПОРТА: $(date '+%Y-%m-%d %H:%M:%S')&quot;</span>
+        <span class="s0">echo &quot;================================================================================&quot;</span>
+        <span class="s0">echo &quot;&quot;</span>
+
+        <span class="s0"># Структура проекта</span>
+        <span class="s0">if $INCLUDE_TREE; then</span>
+            <span class="s0">echo &quot;СТРУКТУРА ПРОЕКТА:&quot;</span>
+            <span class="s0">echo &quot;--------------------------------------------------------------------------------&quot;</span>
+            <span class="s0">create_tree &quot;$PROJECT_PATH&quot; &quot;&quot; true</span>
+            <span class="s0">echo &quot;&quot;</span>
+            <span class="s0">echo &quot;================================================================================&quot;</span>
+            <span class="s0">echo &quot;&quot;</span>
+        <span class="s0">fi</span>
+
+        <span class="s0"># Содержимое файлов</span>
+        <span class="s0">if $INCLUDE_CONTENT; then</span>
+            <span class="s0">echo &quot;СОДЕРЖИМОЕ ФАЙЛОВ:&quot;</span>
+            <span class="s0">echo &quot;================================================================================&quot;</span>
+            <span class="s0">echo &quot;&quot;</span>
+
+            <span class="s0"># Находим все файлы</span>
+            <span class="s0">while IFS= read -r -d '' file; do</span>
+                <span class="s0">if should_include_file &quot;$file&quot;; then</span>
+                    <span class="s0">local relative_path=&quot;${file#$PROJECT_PATH/}&quot;</span>
+                    <span class="s0">local size=$(stat -f%z &quot;$file&quot; 2&gt;/dev/null || stat -c%s &quot;$file&quot; 2&gt;/dev/null || echo &quot;0&quot;)</span>
+                    <span class="s0">local modified=$(stat -f &quot;%Sm&quot; -t &quot;%Y-%m-%d %H:%M:%S&quot; &quot;$file&quot; 2&gt;/dev/null || stat -c &quot;%y&quot; &quot;$file&quot; 2&gt;/dev/null | cut -d' ' -f1-2)</span>
+
+                    <span class="s0">echo &quot;&quot;</span>
+                    <span class="s0">echo &quot;================================================================================&quot;</span>
+                    <span class="s0">echo &quot;ФАЙЛ: $relative_path&quot;</span>
+                    <span class="s0">echo &quot;РАЗМЕР: $(format_size $size) | ИЗМЕНЕН: $modified&quot;</span>
+                    <span class="s0">echo &quot;--------------------------------------------------------------------------------&quot;</span>
+
+                    <span class="s0">if read_file_safely &quot;$file&quot;; then</span>
+                        <span class="s0">((FILES_PROCESSED++))</span>
+                        <span class="s0">TOTAL_SIZE=$((TOTAL_SIZE + size))</span>
+                    <span class="s0">fi</span>
+
+                    <span class="s0"># Показываем прогресс</span>
+                    <span class="s0">if [ $((FILES_PROCESSED % 10)) -eq 0 ] &amp;&amp; [ $FILES_PROCESSED -gt 0 ]; then</span>
+                        <span class="s0">echo -e &quot;${YELLOW}  Обработано файлов: $FILES_PROCESSED${NC}&quot; &gt;&amp;2</span>
+                    <span class="s0">fi</span>
+                <span class="s0">fi</span>
+            <span class="s0">done &lt; &lt;(find &quot;$PROJECT_PATH&quot; -type f -print0 2&gt;/dev/null)</span>
+        <span class="s0">fi</span>
+
+        <span class="s0"># Статистика</span>
+        <span class="s0">echo &quot;&quot;</span>
+        <span class="s0">echo &quot;================================================================================&quot;</span>
+        <span class="s0">echo &quot;СТАТИСТИКА:&quot;</span>
+        <span class="s0">echo &quot;--------------------------------------------------------------------------------&quot;</span>
+        <span class="s0">echo &quot;Обработано файлов: $FILES_PROCESSED&quot;</span>
+        <span class="s0">echo &quot;Пропущено файлов: $FILES_SKIPPED&quot;</span>
+        <span class="s0">echo &quot;Общий размер обработанных файлов: $(format_size $TOTAL_SIZE)&quot;</span>
+        <span class="s0">echo &quot;================================================================================&quot;</span>
+    <span class="s0">} &gt; &quot;$OUTPUT_FILE&quot;</span>
+
+    <span class="s0">echo -e &quot;${GREEN}✅ Готово!${NC}&quot;</span>
+    <span class="s0">echo -e &quot;${WHITE}   Файл сохранен: $OUTPUT_FILE${NC}&quot;</span>
+    <span class="s0">echo -e &quot;${WHITE}   Обработано файлов: $FILES_PROCESSED${NC}&quot;</span>
+    <span class="s0">echo -e &quot;${WHITE}   Общий размер: $(format_size $TOTAL_SIZE)${NC}&quot;</span>
+<span class="s0">}</span>
+
+<span class="s0"># Функция конвертации в отдельные файлы</span>
+<span class="s0">convert_to_separate_files() {</span>
+    <span class="s0">echo -e &quot;${CYAN}Начинаем конвертацию файлов в отдельные TXT...${NC}&quot;</span>
+
+    <span class="s0"># Создаем выходную директорию</span>
+    <span class="s0">mkdir -p &quot;$OUTPUT_DIR&quot;</span>
+
+    <span class="s0">FILES_PROCESSED=0</span>
+
+    <span class="s0"># Находим все файлы</span>
+    <span class="s0">while IFS= read -r -d '' file; do</span>
+        <span class="s0">if should_include_file &quot;$file&quot;; then</span>
+            <span class="s0">local relative_path=&quot;${file#$PROJECT_PATH/}&quot;</span>
+            <span class="s0">local output_path=&quot;$OUTPUT_DIR/${relative_path}.txt&quot;</span>
+            <span class="s0">local output_dir=$(dirname &quot;$output_path&quot;)</span>
+
+            <span class="s0"># Создаем директории если нужно</span>
+            <span class="s0">mkdir -p &quot;$output_dir&quot;</span>
+
+            <span class="s0"># Сохраняем содержимое</span>
+            <span class="s0">{</span>
+                <span class="s0">echo &quot;Исходный файл: $relative_path&quot;</span>
+                <span class="s0">echo &quot;================================================================================&quot;</span>
+                <span class="s0">echo &quot;&quot;</span>
+                <span class="s0">cat &quot;$file&quot; 2&gt;/dev/null || echo &quot;[Ошибка чтения файла]&quot;</span>
+            <span class="s0">} &gt; &quot;$output_path&quot;</span>
+
+            <span class="s0">((FILES_PROCESSED++))</span>
+
+            <span class="s0"># Показываем прогресс</span>
+            <span class="s0">if [ $((FILES_PROCESSED % 10)) -eq 0 ]; then</span>
+                <span class="s0">echo -e &quot;${YELLOW}  Обработано файлов: $FILES_PROCESSED${NC}&quot;</span>
+            <span class="s0">fi</span>
+        <span class="s0">fi</span>
+    <span class="s0">done &lt; &lt;(find &quot;$PROJECT_PATH&quot; -type f -print0 2&gt;/dev/null)</span>
+
+    <span class="s0">echo -e &quot;${GREEN}✅ Готово!${NC}&quot;</span>
+    <span class="s0">echo -e &quot;${WHITE}   Конвертировано файлов: $FILES_PROCESSED${NC}&quot;</span>
+    <span class="s0">echo -e &quot;${WHITE}   Файлы сохранены в: $OUTPUT_DIR${NC}&quot;</span>
+<span class="s0">}</span>
+
+<span class="s0"># Интерактивный режим</span>
+<span class="s0">interactive_mode() {</span>
+    <span class="s0">clear</span>
+    <span class="s0">echo -e &quot;${CYAN}========================================&quot;</span>
+    <span class="s0">echo -e &quot;  КОНВЕРТЕР ПРОЕКТА В TXT&quot;</span>
+    <span class="s0">echo -e &quot;========================================${NC}&quot;</span>
+    <span class="s0">echo &quot;&quot;</span>
+
+    <span class="s0"># Путь к проекту</span>
+    <span class="s0">echo -e &quot;${YELLOW}Введите путь к проекту (Enter для текущей папки):${NC}&quot;</span>
+    <span class="s0">read -r path</span>
+    <span class="s0">if [ -z &quot;$path&quot; ]; then</span>
+        <span class="s0">PROJECT_PATH=&quot;.&quot;</span>
+    <span class="s0">else</span>
+        <span class="s0">PROJECT_PATH=&quot;$path&quot;</span>
+    <span class="s0">fi</span>
+
+    <span class="s0"># Проверяем существование пути</span>
+    <span class="s0">if [ ! -d &quot;$PROJECT_PATH&quot; ]; then</span>
+        <span class="s0">echo -e &quot;${RED}Ошибка: Путь '$PROJECT_PATH' не существует!${NC}&quot;</span>
+        <span class="s0">exit 1</span>
+    <span class="s0">fi</span>
+
+    <span class="s0">echo &quot;&quot;</span>
+    <span class="s0">echo -e &quot;${YELLOW}Выберите режим конвертации:${NC}&quot;</span>
+    <span class="s0">echo -e &quot;${WHITE}1. Все файлы в один TXT&quot;</span>
+    <span class="s0">echo -e &quot;2. Каждый файл в отдельный TXT&quot;</span>
+    <span class="s0">echo -e &quot;3. Оба варианта${NC}&quot;</span>
+    <span class="s0">echo &quot;&quot;</span>
+
+    <span class="s0">read -r -p &quot;Ваш выбор (1/2/3): &quot; choice</span>
+
+    <span class="s0">case $choice in</span>
+        <span class="s0">1)</span>
+            <span class="s0">echo &quot;&quot;</span>
+            <span class="s0">read -r -p &quot;Имя выходного файла (Enter для 'project_output.txt'): &quot; outfile</span>
+            <span class="s0">if [ -n &quot;$outfile&quot; ]; then</span>
+                <span class="s0">OUTPUT_FILE=&quot;$outfile&quot;</span>
+            <span class="s0">fi</span>
+            <span class="s0">convert_to_single_file</span>
+            <span class="s0">;;</span>
+        <span class="s0">2)</span>
+            <span class="s0">echo &quot;&quot;</span>
+            <span class="s0">read -r -p &quot;Папка для сохранения (Enter для 'txt_output'): &quot; outdir</span>
+            <span class="s0">if [ -n &quot;$outdir&quot; ]; then</span>
+                <span class="s0">OUTPUT_DIR=&quot;$outdir&quot;</span>
+            <span class="s0">fi</span>
+            <span class="s0">convert_to_separate_files</span>
+            <span class="s0">;;</span>
+        <span class="s0">3)</span>
+            <span class="s0">convert_to_single_file</span>
+            <span class="s0">convert_to_separate_files</span>
+            <span class="s0">;;</span>
+        <span class="s0">*)</span>
+            <span class="s0">echo -e &quot;${RED}Неверный выбор!${NC}&quot;</span>
+            <span class="s0">exit 1</span>
+            <span class="s0">;;</span>
+    <span class="s0">esac</span>
+<span class="s0">}</span>
+
+<span class="s0"># Обработка параметров командной строки</span>
+<span class="s0">while [[ $# -gt 0 ]]; do</span>
+    <span class="s0">case $1 in</span>
+        <span class="s0">-p|--path)</span>
+            <span class="s0">PROJECT_PATH=&quot;$2&quot;</span>
+            <span class="s0">shift 2</span>
+            <span class="s0">;;</span>
+        <span class="s0">-o|--output)</span>
+            <span class="s0">OUTPUT_FILE=&quot;$2&quot;</span>
+            <span class="s0">shift 2</span>
+            <span class="s0">;;</span>
+        <span class="s0">-d|--dir)</span>
+            <span class="s0">OUTPUT_DIR=&quot;$2&quot;</span>
+            <span class="s0">shift 2</span>
+            <span class="s0">;;</span>
+        <span class="s0">-m|--max-size)</span>
+            <span class="s0">MAX_FILE_SIZE_MB=&quot;$2&quot;</span>
+            <span class="s0">shift 2</span>
+            <span class="s0">;;</span>
+        <span class="s0">-s|--single)</span>
+            <span class="s0">MODE=&quot;single&quot;</span>
+            <span class="s0">shift</span>
+            <span class="s0">;;</span>
+        <span class="s0">-S|--separate)</span>
+            <span class="s0">MODE=&quot;separate&quot;</span>
+            <span class="s0">shift</span>
+            <span class="s0">;;</span>
+        <span class="s0">-h|--help)</span>
+            <span class="s0">echo &quot;Использование: $0 [параметры]&quot;</span>
+            <span class="s0">echo &quot;&quot;</span>
+            <span class="s0">echo &quot;Параметры:&quot;</span>
+            <span class="s0">echo &quot;  -p, --path PATH        Путь к проекту (по умолчанию: текущая папка)&quot;</span>
+            <span class="s0">echo &quot;  -o, --output FILE      Имя выходного файла (по умолчанию: project_output.txt)&quot;</span>
+            <span class="s0">echo &quot;  -d, --dir DIR          Папка для отдельных файлов (по умолчанию: txt_output)&quot;</span>
+            <span class="s0">echo &quot;  -m, --max-size MB      Максимальный размер файла в МБ (по умолчанию: 10)&quot;</span>
+            <span class="s0">echo &quot;  -s, --single           Конвертировать в один файл&quot;</span>
+            <span class="s0">echo &quot;  -S, --separate         Конвертировать в отдельные файлы&quot;</span>
+            <span class="s0">echo &quot;  -h, --help             Показать эту справку&quot;</span>
+            <span class="s0">echo &quot;&quot;</span>
+            <span class="s0">echo &quot;Примеры:&quot;</span>
+            <span class="s0">echo &quot;  $0                     # Интерактивный режим&quot;</span>
+            <span class="s0">echo &quot;  $0 -s -p /path/to/project&quot;</span>
+            <span class="s0">echo &quot;  $0 -S -p . -d output_files&quot;</span>
+            <span class="s0">exit 0</span>
+            <span class="s0">;;</span>
+        <span class="s0">*)</span>
+            <span class="s0">echo -e &quot;${RED}Неизвестный параметр: $1${NC}&quot;</span>
+            <span class="s0">echo &quot;Используйте -h для справки&quot;</span>
+            <span class="s0">exit 1</span>
+            <span class="s0">;;</span>
+    <span class="s0">esac</span>
+<span class="s0">done</span>
+
+<span class="s0"># Главная логика</span>
+<span class="s0">if [ &quot;$MODE&quot; == &quot;single&quot; ]; then</span>
+    <span class="s0">convert_to_single_file</span>
+<span class="s0">elif [ &quot;$MODE&quot; == &quot;separate&quot; ]; then</span>
+    <span class="s0">convert_to_separate_files</span>
+<span class="s0">else</span>
+    <span class="s0">interactive_mode</span>
+<span class="s0">fi</span>
+
+<span class="s0">echo &quot;&quot;</span>
+<span class="s0">echo -e &quot;${YELLOW}Нажмите Enter для выхода...${NC}&quot;</span>
+<span class="s0">read -r</span>
+<span class="s0">================================================================================</span>
+<span class="s0">ФАЙЛ: project_output.txt</span>
+<span class="s0">РАЗМЕР: 22 KB | ИЗМЕНЕН: ./project_output.txt 74e6bfed00000000 255 3e72eff 4096 4096 124996863 33459751 33459751 18446744073709551615 -1</span>
+<span class="s0">2025-08-19 13:35:40.277337200</span>
+<span class="s0">--------------------------------------------------------------------------------</span>
+<span class="s0">[Ошибка чтения файла]</span>
+
+<span class="s0">================================================================================</span>
+<span class="s0">ФАЙЛ: src/command/CalculatorCommand.java</span>
+<span class="s0">РАЗМЕР: 499 B | ИЗМЕНЕН: ./src/command/CalculatorCommand.java 74e6bfed00000000 255 3e72eff 4096 4096 124996863 33459751 33459751 18446744073709551615 -1</span>
+<span class="s0">2025-08-10 09:46:00.179100600</span>
+<span class="s0">--------------------------------------------------------------------------------</span>
+<span class="s0">package command;</span>
+
+<span class="s0">import lombok.Data;</span>
+<span class="s0">import service.CalculatorService;</span>
+
+<span class="s0">@Data</span>
+<span class="s0">public class CalculatorCommand implements Command {</span>
+
+    <span class="s0">private final CalculatorService calculatorService = new CalculatorService();</span>
+
+    <span class="s0">@Override</span>
+    <span class="s0">public Long getId() {</span>
+        <span class="s0">return 1L;</span>
+    <span class="s0">}</span>
+
+    <span class="s0">@Override</span>
+    <span class="s0">public String getDescription() {</span>
+        <span class="s0">return &quot;Калькулятор&quot;;</span>
+    <span class="s0">}</span>
+
+    <span class="s0">@Override</span>
+    <span class="s0">public void execute() {</span>
+        <span class="s0">calculatorService.startCalculator();</span>
+    <span class="s0">}</span>
+<span class="s0">}</span>
+
+<span class="s0">================================================================================</span>
+<span class="s0">ФАЙЛ: src/command/Command.java</span>
+<span class="s0">РАЗМЕР: 121 B | ИЗМЕНЕН: ./src/command/Command.java 74e6bfed00000000 255 3e72eff 4096 4096 124996863 33459767 33459767 18446744073709551615 -1</span>
+<span class="s0">2025-07-18 14:20:45.440692700</span>
+<span class="s0">--------------------------------------------------------------------------------</span>
+<span class="s0">package command;</span>
+
+<span class="s0">public interface Command {</span>
+    <span class="s0">Long getId();</span>
+    <span class="s0">String getDescription();</span>
+    <span class="s0">void execute();</span>
+<span class="s0">}</span>
+
+<span class="s0">================================================================================</span>
+<span class="s0">ФАЙЛ: src/command/FindPetCommand.java</span>
+<span class="s0">РАЗМЕР: 436 B | ИЗМЕНЕН: ./src/command/FindPetCommand.java 74e6bfed00000000 255 3e72eff 4096 4096 124996863 33459767 33459767 18446744073709551615 -1</span>
+<span class="s0">2025-08-10 09:46:00.179100600</span>
+<span class="s0">--------------------------------------------------------------------------------</span>
+<span class="s0">package command;</span>
+
+<span class="s0">import service.PetService;</span>
+
+<span class="s0">public class FindPetCommand implements Command {</span>
+    <span class="s0">private final PetService petService = new PetService();</span>
+
+    <span class="s0">@Override</span>
+    <span class="s0">public Long getId() {</span>
+        <span class="s0">return 13L;</span>
+    <span class="s0">}</span>
+
+    <span class="s0">@Override</span>
+    <span class="s0">public String getDescription() {</span>
+        <span class="s0">return &quot;Поиск питомца&quot;;</span>
+    <span class="s0">}</span>
+
+    <span class="s0">@Override</span>
+    <span class="s0">public void execute() {</span>
+        <span class="s0">petService.findPetsByParams();</span>
+    <span class="s0">}</span>
+<span class="s0">}</span>
+
+<span class="s0">================================================================================</span>
+<span class="s0">ФАЙЛ: src/command/GeneratePet.java</span>
+<span class="s0">РАЗМЕР: 436 B | ИЗМЕНЕН: ./src/command/GeneratePet.java 74e6bfed00000000 255 3e72eff 4096 4096 124996863 33459766 33459766 18446744073709551615 -1</span>
+<span class="s0">2025-08-10 09:46:00.180164100</span>
+<span class="s0">--------------------------------------------------------------------------------</span>
+<span class="s0">package command;</span>
+
+<span class="s0">import service.PetService;</span>
+
+<span class="s0">public class GeneratePet implements Command {</span>
+    <span class="s0">private final PetService petService = new PetService();</span>
+
+    <span class="s0">@Override</span>
+    <span class="s0">public Long getId() {</span>
+        <span class="s0">return 3L;</span>
+    <span class="s0">}</span>
+
+    <span class="s0">@Override</span>
+    <span class="s0">public String getDescription() {</span>
+        <span class="s0">return &quot;Создание питомцев&quot;;</span>
+    <span class="s0">}</span>
+
+    <span class="s0">@Override</span>
+    <span class="s0">public void execute() {</span>
+        <span class="s0">petService.generatePets();</span>
+    <span class="s0">}</span>
+<span class="s0">}</span>
+
+<span class="s0">================================================================================</span>
+<span class="s0">ФАЙЛ: src/command/LoadFromCsvCommand.java</span>
+<span class="s0">РАЗМЕР: 420 B | ИЗМЕНЕН: ./src/command/LoadFromCsvCommand.java 74e6bfed00000000 255 3e72eff 4096 4096 124996863 33459766 33459766 18446744073709551615 -1</span>
+<span class="s0">2025-08-10 09:46:00.180164100</span>
+<span class="s0">--------------------------------------------------------------------------------</span>
+<span class="s0">package command;</span>
+
+<span class="s0">import service.CSVService;</span>
+
+<span class="s0">public class LoadFromCsvCommand implements Command {</span>
+    <span class="s0">private final CSVService csvService = new CSVService();</span>
+    <span class="s0">@Override</span>
+    <span class="s0">public Long getId() {</span>
+        <span class="s0">return 7L;</span>
+    <span class="s0">}</span>
+
+    <span class="s0">@Override</span>
+    <span class="s0">public String getDescription() {</span>
+        <span class="s0">return &quot;Загрузить из CSV&quot;;</span>
+    <span class="s0">}</span>
+
+    <span class="s0">@Override</span>
+    <span class="s0">public void execute() { csvService.loadFromCsv(); }</span>
+<span class="s0">}</span>
+
+<span class="s0">================================================================================</span>
+<span class="s0">ФАЙЛ: src/command/LoadFromJsonCommand.java</span>
+<span class="s0">РАЗМЕР: 444 B | ИЗМЕНЕН: ./src/command/LoadFromJsonCommand.java 74e6bfed00000000 255 3e72eff 4096 4096 124996863 33459766 33459766 18446744073709551615 -1</span>
+<span class="s0">2025-08-10 09:46:00.180164100</span>
+<span class="s0">--------------------------------------------------------------------------------</span>
+<span class="s0">package command;</span>
+
+<span class="s0">import service.JSONService;</span>
+
+<span class="s0">public class LoadFromJsonCommand implements Command {</span>
+    <span class="s0">private final JSONService jsonService = new JSONService();</span>
+
+    <span class="s0">@Override</span>
+    <span class="s0">public Long getId() {</span>
+        <span class="s0">return 6L;</span>
+    <span class="s0">}</span>
+
+    <span class="s0">@Override</span>
+    <span class="s0">public String getDescription() {</span>
+        <span class="s0">return &quot;Загрузить из JSON&quot;;</span>
+    <span class="s0">}</span>
+
+    <span class="s0">@Override</span>
+    <span class="s0">public void execute() {</span>
+        <span class="s0">jsonService.loadFromJson();</span>
+    <span class="s0">}</span>
+<span class="s0">}</span>
+
+<span class="s0">================================================================================</span>
+<span class="s0">ФАЙЛ: src/command/PersonCommand.java</span>
+<span class="s0">РАЗМЕР: 452 B | ИЗМЕНЕН: ./src/command/PersonCommand.java 74e6bfed00000000 255 3e72eff 4096 4096 124996863 33459750 33459750 18446744073709551615 -1</span>
+<span class="s0">2025-08-10 09:46:00.181231600</span>
+<span class="s0">--------------------------------------------------------------------------------</span>
+<span class="s0">package command;</span>
+
+<span class="s0">import service.PersonService;</span>
+
+<span class="s0">public class PersonCommand implements Command {</span>
+
+    <span class="s0">private final PersonService personService = new PersonService();</span>
+
+    <span class="s0">@Override</span>
+    <span class="s0">public Long getId() {</span>
+        <span class="s0">return 2L;</span>
+    <span class="s0">}</span>
+
+    <span class="s0">@Override</span>
+    <span class="s0">public String getDescription() {</span>
+        <span class="s0">return &quot;Создание людей&quot;;</span>
+    <span class="s0">}</span>
+
+    <span class="s0">@Override</span>
+    <span class="s0">public void execute() {</span>
+        <span class="s0">personService.generatePersons();</span>
+    <span class="s0">}</span>
+<span class="s0">}</span>
+
+<span class="s0">================================================================================</span>
+<span class="s0">ФАЙЛ: src/command/PetToPersonComannnd.java</span>
+<span class="s0">РАЗМЕР: 470 B | ИЗМЕНЕН: ./src/command/PetToPersonComannnd.java 74e6bfed00000000 255 3e72eff 4096 4096 124996863 33459734 33459734 18446744073709551615 -1</span>
+<span class="s0">2025-08-10 09:46:00.181231600</span>
+<span class="s0">--------------------------------------------------------------------------------</span>
+<span class="s0">package command;</span>
+
+<span class="s0">import service.PetService;</span>
+
+<span class="s0">public class PetToPersonComannnd implements Command {</span>
+    <span class="s0">private final PetService petService = new PetService();</span>
+
+    <span class="s0">@Override</span>
+    <span class="s0">public Long getId() {</span>
+        <span class="s0">return 12L;</span>
+    <span class="s0">}</span>
+
+    <span class="s0">@Override</span>
+    <span class="s0">public String getDescription() {</span>
+        <span class="s0">return &quot;Создание питомцев для людей&quot;;</span>
+    <span class="s0">}</span>
+
+    <span class="s0">@Override</span>
+    <span class="s0">public void execute() {</span>
+        <span class="s0">petService.assignPetsToPersons();</span>
+    <span class="s0">}</span>
+<span class="s0">}</span>
+
+<span class="s0">================================================================================</span>
+<span class="s0">ФАЙЛ: src/command/PrintCsvCommand.java</span>
+<span class="s0">РАЗМЕР: 423 B | ИЗМЕНЕН: ./src/command/PrintCsvCommand.java 74e6bfed00000000 255 3e72eff 4096 4096 124996863 33459734 33459734 18446744073709551615 -1</span>
+<span class="s0">2025-08-10 09:46:00.181231600</span>
+<span class="s0">--------------------------------------------------------------------------------</span>
+<span class="s0">package command;</span>
+
+<span class="s0">import service.CSVService;</span>
+
+<span class="s0">public class PrintCsvCommand implements Command {</span>
+    <span class="s0">private final CSVService csvService = new CSVService();</span>
+    <span class="s0">@Override</span>
+    <span class="s0">public Long getId() {</span>
+        <span class="s0">return 10L;</span>
+    <span class="s0">}</span>
+
+    <span class="s0">@Override</span>
+    <span class="s0">public String getDescription() {</span>
+        <span class="s0">return &quot;Показать CSV-файла&quot;;</span>
+    <span class="s0">}</span>
+
+    <span class="s0">@Override</span>
+    <span class="s0">public void execute() { csvService.printCsvFile(); }</span>
+<span class="s0">}</span>
+
+<span class="s0">================================================================================</span>
+<span class="s0">ФАЙЛ: src/command/PrintePetCommand.java</span>
+<span class="s0">РАЗМЕР: 453 B | ИЗМЕНЕН: ./src/command/PrintePetCommand.java 74e6bfed00000000 255 3e72eff 4096 4096 124996863 33459734 33459734 18446744073709551615 -1</span>
+<span class="s0">2025-08-10 09:46:00.183054300</span>
+<span class="s0">--------------------------------------------------------------------------------</span>
+<span class="s0">package command;</span>
+
+<span class="s0">import service.PetService;</span>
+
+<span class="s0">public class PrintePetCommand implements Command {</span>
+    <span class="s0">private final PetService petService = new PetService();</span>
+    <span class="s0">@Override</span>
+    <span class="s0">public Long getId() {</span>
+        <span class="s0">return 11L;</span>
+    <span class="s0">}</span>
+
+    <span class="s0">@Override</span>
+    <span class="s0">public String getDescription() {</span>
+        <span class="s0">return &quot;Показать список питомцев&quot;;</span>
+    <span class="s0">}</span>
+
+    <span class="s0">@Override</span>
+    <span class="s0">public void execute() {</span>
+        <span class="s0">petService.printAllPets();</span>
+    <span class="s0">}</span>
+<span class="s0">}</span>
+
+<span class="s0">================================================================================</span>
+<span class="s0">ФАЙЛ: src/command/PrintJsonCommand.java</span>
+<span class="s0">РАЗМЕР: 446 B | ИЗМЕНЕН: ./src/command/PrintJsonCommand.java 74e6bfed00000000 255 3e72eff 4096 4096 124996863 33459734 33459734 18446744073709551615 -1</span>
+<span class="s0">2025-08-10 09:46:00.181231600</span>
+<span class="s0">--------------------------------------------------------------------------------</span>
+<span class="s0">package command;</span>
+
+<span class="s0">import service.JSONService;</span>
+
+<span class="s0">public class PrintJsonCommand implements Command {</span>
+    <span class="s0">private final JSONService jsonService = new JSONService();</span>
+
+
+    <span class="s0">@Override</span>
+    <span class="s0">public Long getId() {</span>
+        <span class="s0">return 9L;</span>
+    <span class="s0">}</span>
+
+    <span class="s0">@Override</span>
+    <span class="s0">public String getDescription() {</span>
+        <span class="s0">return &quot;Показать JSON-файл&quot;;</span>
+    <span class="s0">}</span>
+
+    <span class="s0">@Override</span>
+    <span class="s0">public void execute() {</span>
+        <span class="s0">jsonService.printJsonFile();</span>
+    <span class="s0">}</span>
+<span class="s0">}</span>
+
+<span class="s0">================================================================================</span>
+<span class="s0">ФАЙЛ: src/command/PrintPersonCommand.java</span>
+<span class="s0">РАЗМЕР: 447 B | ИЗМЕНЕН: ./src/command/PrintPersonCommand.java 74e6bfed00000000 255 3e72eff 4096 4096 124996863 33459702 33459702 18446744073709551615 -1</span>
+<span class="s0">2025-08-10 09:46:00.182339100</span>
+<span class="s0">--------------------------------------------------------------------------------</span>
+<span class="s0">package command;</span>
+
+<span class="s0">import service.PersonService;</span>
+
+<span class="s0">public class PrintPersonCommand implements Command {</span>
+    <span class="s0">private final PersonService personService = new PersonService();</span>
+
+    <span class="s0">@Override</span>
+    <span class="s0">public Long getId() {</span>
+        <span class="s0">return 8L;</span>
+    <span class="s0">}</span>
+
+    <span class="s0">@Override</span>
+    <span class="s0">public String getDescription() {</span>
+        <span class="s0">return &quot;Cписок людей&quot;;</span>
+    <span class="s0">}</span>
+
+    <span class="s0">@Override</span>
+    <span class="s0">public void execute() {</span>
+        <span class="s0">personService.printPersons();</span>
+    <span class="s0">}</span>
+<span class="s0">}</span>
+
+<span class="s0">================================================================================</span>
+<span class="s0">ФАЙЛ: src/command/SaveToCsvCommand.java</span>
+<span class="s0">РАЗМЕР: 414 B | ИЗМЕНЕН: ./src/command/SaveToCsvCommand.java 74e6bfed00000000 255 3e72eff 4096 4096 124996863 33459702 33459702 18446744073709551615 -1</span>
+<span class="s0">2025-08-10 09:46:00.183054300</span>
+<span class="s0">--------------------------------------------------------------------------------</span>
+<span class="s0">package command;</span>
+
+<span class="s0">import service.CSVService;</span>
+
+<span class="s0">public class SaveToCsvCommand implements Command {</span>
+    <span class="s0">private final CSVService csvService = new CSVService();</span>
+    <span class="s0">@Override</span>
+    <span class="s0">public Long getId() {</span>
+        <span class="s0">return 5L;</span>
+    <span class="s0">}</span>
+
+    <span class="s0">@Override</span>
+    <span class="s0">public String getDescription() {</span>
+        <span class="s0">return &quot;Сохранить в CSV&quot;;</span>
+    <span class="s0">}</span>
+
+    <span class="s0">@Override</span>
+    <span class="s0">public void execute() { csvService.saveToCsv(); }</span>
+<span class="s0">}</span>
+
+<span class="s0">================================================================================</span>
+<span class="s0">ФАЙЛ: src/command/SaveToJsonCommand.java</span>
+<span class="s0">РАЗМЕР: 438 B | ИЗМЕНЕН: ./src/command/SaveToJsonCommand.java 74e6bfed00000000 255 3e72eff 4096 4096 124996863 33459702 33459702 18446744073709551615 -1</span>
+<span class="s0">2025-08-10 09:46:00.183054300</span>
+<span class="s0">--------------------------------------------------------------------------------</span>
+<span class="s0">package command;</span>
+
+<span class="s0">import service.JSONService;</span>
+
+<span class="s0">public class SaveToJsonCommand implements Command {</span>
+    <span class="s0">private final JSONService jsonService = new JSONService();</span>
+
+    <span class="s0">@Override</span>
+    <span class="s0">public Long getId() {</span>
+        <span class="s0">return 4L;</span>
+    <span class="s0">}</span>
+
+    <span class="s0">@Override</span>
+    <span class="s0">public String getDescription() {</span>
+        <span class="s0">return &quot;Сохранить в JSON&quot;;</span>
+    <span class="s0">}</span>
+
+    <span class="s0">@Override</span>
+    <span class="s0">public void execute() {</span>
+        <span class="s0">jsonService.saveToJson();</span>
+    <span class="s0">}</span>
+<span class="s0">}</span>
+
+<span class="s0">================================================================================</span>
+<span class="s0">ФАЙЛ: src/entity/person/Person.java</span>
+<span class="s0">РАЗМЕР: 694 B | ИЗМЕНЕН: ./src/entity/person/Person.java 74e6bfed00000000 255 3e72eff 4096 4096 124996863 33459702 33459702 18446744073709551615 -1</span>
+<span class="s0">2025-08-18 12:16:39.924995200</span>
+<span class="s0">--------------------------------------------------------------------------------</span>
+<span class="s0">package entity.person;</span>
+
+<span class="s0">import entity.pet.Pet;</span>
+<span class="s0">import lombok.AllArgsConstructor;</span>
+<span class="s0">import lombok.Getter;</span>
+<span class="s0">import lombok.NoArgsConstructor;</span>
+<span class="s0">import lombok.Setter;</span>
+
+<span class="s0">import java.util.ArrayList;</span>
+<span class="s0">import java.util.List;</span>
+
+<span class="s0">@Getter</span>
+<span class="s0">@Setter</span>
+<span class="s0">@NoArgsConstructor</span>
+<span class="s0">@AllArgsConstructor</span>
+<span class="s0">public class Person {</span>
+    <span class="s0">private String name;</span>
+    <span class="s0">private int age;</span>
+    <span class="s0">private List&lt;Pet&gt; pets = new ArrayList&lt;&gt;();</span>
+
+    <span class="s0">public void addPet(Pet pet) {</span>
+        <span class="s0">pets.add(pet);</span>
+    <span class="s0">}</span>
+
+    <span class="s0">@Override</span>
+    <span class="s0">public String toString() {</span>
+        <span class="s0">String petInfo = (pets != null) ? &quot;Питомец: &quot; + pets : &quot;Без питомца&quot;;</span>
+        <span class="s0">return name + &quot; (возраст: &quot; + age + &quot;) — &quot; + petInfo;</span>
+    <span class="s0">}</span>
+<span class="s0">}</span>
+<span class="s0">================================================================================</span>
+<span class="s0">ФАЙЛ: src/entity/pet/Cat.java</span>
+<span class="s0">РАЗМЕР: 401 B | ИЗМЕНЕН: ./src/entity/pet/Cat.java 74e6bfed00000000 255 3e72eff 4096 4096 124996863 33459702 33459702 18446744073709551615 -1</span>
+<span class="s0">2025-08-10 09:46:00.184112600</span>
+<span class="s0">--------------------------------------------------------------------------------</span>
+<span class="s0">package entity.pet;</span>
+
+<span class="s0">import lombok.AllArgsConstructor;</span>
+<span class="s0">import lombok.Getter;</span>
+<span class="s0">import lombok.NoArgsConstructor;</span>
+
+<span class="s0">@Getter</span>
+<span class="s0">@NoArgsConstructor</span>
+<span class="s0">@AllArgsConstructor</span>
+<span class="s0">public class Cat implements Pet {</span>
+    <span class="s0">private String name;</span>
+    <span class="s0">private int age;</span>
+    <span class="s0">private String breed;</span>
+
+    <span class="s0">@Override</span>
+    <span class="s0">public String toString() {</span>
+        <span class="s0">return name + &quot; (&quot; + age + &quot; лет, &quot; + breed + &quot;)&quot;;</span>
+    <span class="s0">}</span>
+<span class="s0">}</span>
+
+
+<span class="s0">================================================================================</span>
+<span class="s0">ФАЙЛ: src/entity/pet/Dog.java</span>
+<span class="s0">РАЗМЕР: 397 B | ИЗМЕНЕН: ./src/entity/pet/Dog.java 74e6bfed00000000 255 3e72eff 4096 4096 124996863 33459718 33459718 18446744073709551615 -1</span>
+<span class="s0">2025-08-10 09:46:00.185301700</span>
+<span class="s0">--------------------------------------------------------------------------------</span>
+<span class="s0">package entity.pet;</span>
+
+<span class="s0">import lombok.AllArgsConstructor;</span>
+<span class="s0">import lombok.Getter;</span>
+<span class="s0">import lombok.NoArgsConstructor;</span>
+
+<span class="s0">@Getter</span>
+<span class="s0">@NoArgsConstructor</span>
+<span class="s0">@AllArgsConstructor</span>
+<span class="s0">public class Dog implements Pet {</span>
+    <span class="s0">private String name;</span>
+    <span class="s0">private int age;</span>
+    <span class="s0">private String breed;</span>
+
+    <span class="s0">@Override</span>
+    <span class="s0">public String toString() {</span>
+        <span class="s0">return name + &quot; (&quot; + age + &quot; лет, &quot; + breed + &quot;)&quot;;</span>
+    <span class="s0">}</span>
+<span class="s0">}</span>
+<span class="s0">================================================================================</span>
+<span class="s0">ФАЙЛ: src/entity/pet/Mouse.java</span>
+<span class="s0">РАЗМЕР: 399 B | ИЗМЕНЕН: ./src/entity/pet/Mouse.java 74e6bfed00000000 255 3e72eff 4096 4096 124996863 33459718 33459718 18446744073709551615 -1</span>
+<span class="s0">2025-08-10 09:46:00.185301700</span>
+<span class="s0">--------------------------------------------------------------------------------</span>
+<span class="s0">package entity.pet;</span>
+
+<span class="s0">import lombok.AllArgsConstructor;</span>
+<span class="s0">import lombok.Getter;</span>
+<span class="s0">import lombok.NoArgsConstructor;</span>
+
+<span class="s0">@Getter</span>
+<span class="s0">@NoArgsConstructor</span>
+<span class="s0">@AllArgsConstructor</span>
+<span class="s0">public class Mouse implements Pet {</span>
+    <span class="s0">private String name;</span>
+    <span class="s0">private int age;</span>
+    <span class="s0">private String breed;</span>
+
+    <span class="s0">@Override</span>
+    <span class="s0">public String toString() {</span>
+        <span class="s0">return name + &quot; (&quot; + age + &quot; лет, &quot; + breed + &quot;)&quot;;</span>
+    <span class="s0">}</span>
+<span class="s0">}</span>
+<span class="s0">================================================================================</span>
+<span class="s0">ФАЙЛ: src/entity/pet/Pet.java</span>
+<span class="s0">РАЗМЕР: 120 B | ИЗМЕНЕН: ./src/entity/pet/Pet.java 74e6bfed00000000 255 3e72eff 4096 4096 124996863 33459718 33459718 18446744073709551615 -1</span>
+<span class="s0">2025-07-18 14:20:45.444307200</span>
+<span class="s0">--------------------------------------------------------------------------------</span>
+<span class="s0">package entity.pet;</span>
+
+<span class="s0">public interface Pet {</span>
+    <span class="s0">String getName();</span>
+
+    <span class="s0">int getAge();</span>
+
+    <span class="s0">String getBreed();</span>
+<span class="s0">}</span>
+
+<span class="s0">================================================================================</span>
+<span class="s0">ФАЙЛ: src/entity/pet/Rat.java</span>
+<span class="s0">РАЗМЕР: 397 B | ИЗМЕНЕН: ./src/entity/pet/Rat.java 74e6bfed00000000 255 3e72eff 4096 4096 124996863 33459718 33459718 18446744073709551615 -1</span>
+<span class="s0">2025-08-10 09:46:00.185301700</span>
+<span class="s0">--------------------------------------------------------------------------------</span>
+<span class="s0">package entity.pet;</span>
+
+<span class="s0">import lombok.AllArgsConstructor;</span>
+<span class="s0">import lombok.Getter;</span>
+<span class="s0">import lombok.NoArgsConstructor;</span>
+
+<span class="s0">@Getter</span>
+<span class="s0">@NoArgsConstructor</span>
+<span class="s0">@AllArgsConstructor</span>
+<span class="s0">public class Rat implements Pet {</span>
+    <span class="s0">private String name;</span>
+    <span class="s0">private int age;</span>
+    <span class="s0">private String breed;</span>
+
+    <span class="s0">@Override</span>
+    <span class="s0">public String toString() {</span>
+        <span class="s0">return name + &quot; (&quot; + age + &quot; лет, &quot; + breed + &quot;)&quot;;</span>
+    <span class="s0">}</span>
+<span class="s0">}</span>
+<span class="s0">================================================================================</span>
+<span class="s0">ФАЙЛ: src/Main.java</span>
+<span class="s0">РАЗМЕР: 2 KB | ИЗМЕНЕН: ./src/Main.java 74e6bfed00000000 255 3e72eff 4096 4096 124996863 33459718 33459718 18446744073709551615 -1</span>
+<span class="s0">2025-08-18 17:09:15.935688400</span>
+<span class="s0">--------------------------------------------------------------------------------</span>
+<span class="s0">import command.Command;</span>
+<span class="s0">import service.PersonService;</span>
+<span class="s0">import service.PetService;</span>
+<span class="s0">import org.reflections.Reflections;</span>
+
+<span class="s0">import java.lang.reflect.Modifier;</span>
+<span class="s0">import java.util.HashMap;</span>
+<span class="s0">import java.util.Scanner;</span>
+<span class="s0">import java.util.Set;</span>
+
+
+<span class="s0">public class Main {</span>
+
+    <span class="s0">static HashMap&lt;Long, Command&gt; commands = new HashMap&lt;&gt;();</span>
+    <span class="s0">static PersonService personService = new PersonService();</span>
+    <span class="s0">static PetService petService = new PetService();</span>
+
+    <span class="s0">static {</span>
+        <span class="s0">try {</span>
+            <span class="s0">Reflections reflections = new Reflections(&quot;command&quot;);</span>
+            <span class="s0">Set&lt;Class&lt;? extends Command&gt;&gt; commandClasses = reflections.getSubTypesOf(Command.class);</span>
+
+            <span class="s0">for (Class&lt;? extends Command&gt; clazz : commandClasses) {</span>
+                <span class="s0">if (!Modifier.isAbstract(clazz.getModifiers())) {</span>
+                    <span class="s0">try {</span>
+                        <span class="s0">Command command = clazz.getDeclaredConstructor().newInstance();</span>
+                        <span class="s0">commands.put(command.getId(), command);</span>
+                    <span class="s0">} catch (Exception e) {</span>
+                        <span class="s0">System.out.println(&quot;Не удалось создать экземпляр команды: &quot; + clazz.getSimpleName()</span>
+                                <span class="s0">+ &quot;. Проверьте наличие дефолтного конструктора.&quot;);</span>
+                    <span class="s0">}</span>
+                <span class="s0">}</span>
+            <span class="s0">}</span>
+            <span class="s0">if (commands.isEmpty()) {</span>
+                <span class="s0">System.out.println(&quot;Команды не найдены. Проверьте пакет command и классы команд.&quot;);</span>
+            <span class="s0">}</span>
+        <span class="s0">} catch (Exception e) {</span>
+            <span class="s0">System.out.println(&quot;Ошибка при инициализации команд: &quot; + e.getMessage());</span>
+        <span class="s0">}</span>
+    <span class="s0">}</span>
+
+    <span class="s0">public static void main(String[] args) {</span>
+        <span class="s0">Scanner scanner = new Scanner(System.in);</span>
+        <span class="s0">while (true) {</span>
+            <span class="s0">System.out.println(&quot;\nВыберите действие:&quot;);</span>
+            <span class="s0">commands.forEach((key, command) -&gt;</span>
+                    <span class="s0">System.out.println(key + &quot;: &quot; + command.getDescription())</span>
+            <span class="s0">);</span>
+            <span class="s0">System.out.println(&quot;Введите номер команды:&quot;);</span>
+            <span class="s0">Long commandId = scanner.nextLong();</span>
+            <span class="s0">Command command = commands.get(commandId);</span>
+            <span class="s0">if (command != null) {</span>
+                <span class="s0">command.execute();</span>
+            <span class="s0">} else {</span>
+                <span class="s0">System.out.println(&quot;Команда не найдена&quot;);</span>
+            <span class="s0">}</span>
+        <span class="s0">}</span>
+    <span class="s0">}</span>
+<span class="s0">}</span>
+
+
+<span class="s0">================================================================================</span>
+<span class="s0">ФАЙЛ: src/repository/PersonRepository.java</span>
+<span class="s0">РАЗМЕР: 844 B | ИЗМЕНЕН: ./src/repository/PersonRepository.java 74e6bfed00000000 255 3e72eff 4096 4096 124996863 33459712 33459712 18446744073709551615 -1</span>
+<span class="s0">2025-08-18 13:55:47.427367200</span>
+<span class="s0">--------------------------------------------------------------------------------</span>
+<span class="s0">package repository;</span>
+
+<span class="s0">import entity.person.Person;</span>
+<span class="s0">import lombok.Getter;</span>
+<span class="s0">import lombok.Setter;</span>
+
+<span class="s0">import java.util.ArrayList;</span>
+<span class="s0">import java.util.List;</span>
+
+<span class="s0">@Getter @Setter</span>
+<span class="s0">public class PersonRepository {</span>
+    <span class="s0">private static PersonRepository instance;</span>
+
+    <span class="s0">private final List&lt;Person&gt; persons = new ArrayList&lt;&gt;();</span>
+
+    <span class="s0">private PersonRepository() { }</span>
+
+    <span class="s0">public static synchronized PersonRepository getInstance() {</span>
+        <span class="s0">if (instance == null) {</span>
+            <span class="s0">instance = new PersonRepository();</span>
+        <span class="s0">}</span>
+        <span class="s0">return instance;</span>
+    <span class="s0">}</span>
+
+    <span class="s0">public void save(Person person) {</span>
+        <span class="s0">persons.add(person);</span>
+    <span class="s0">}</span>
+
+    <span class="s0">public List&lt;Person&gt; findAll() {</span>
+        <span class="s0">return new ArrayList&lt;&gt;(persons);</span>
+    <span class="s0">}</span>
+
+    <span class="s0">public void clear() {</span>
+        <span class="s0">persons.clear();</span>
+    <span class="s0">}</span>
+
+    <span class="s0">public int count() {</span>
+        <span class="s0">return persons.size();</span>
+    <span class="s0">}</span>
+<span class="s0">}</span>
+
+<span class="s0">================================================================================</span>
+<span class="s0">ФАЙЛ: src/service/CalculatorService.java</span>
+<span class="s0">РАЗМЕР: 3 KB | ИЗМЕНЕН: ./src/service/CalculatorService.java 74e6bfed00000000 255 3e72eff 4096 4096 124996863 33459712 33459712 18446744073709551615 -1</span>
+<span class="s0">2025-07-18 14:20:45.444307200</span>
+<span class="s0">--------------------------------------------------------------------------------</span>
+<span class="s0">package service;</span>
+
+<span class="s0">import java.util.Scanner;</span>
+
+<span class="s0">public class CalculatorService {</span>
+    <span class="s0">public void startCalculator() {</span>
+        <span class="s0">Scanner scanner = new Scanner(System.in);</span>
+        <span class="s0">double result;</span>
+        <span class="s0">boolean continueOperation = true;</span>
+
+        <span class="s0">while (continueOperation) {</span>
+            <span class="s0">System.out.print(&quot;Введите первое число: &quot;);</span>
+            <span class="s0">double num1 = scanner.nextDouble();</span>
+
+            <span class="s0">System.out.print(&quot;Введите второе число: &quot;);</span>
+            <span class="s0">double num2 = scanner.nextDouble();</span>
+
+            <span class="s0">System.out.print(&quot;Выберите операцию (+, -, *, /): &quot;);</span>
+            <span class="s0">char operation = scanner.next().charAt(0);</span>
+
+            <span class="s0">switch (operation) {</span>
+                <span class="s0">case '+':</span>
+                    <span class="s0">result = num1 + num2;</span>
+                    <span class="s0">break;</span>
+                <span class="s0">case '-':</span>
+                    <span class="s0">result = num1 - num2;</span>
+                    <span class="s0">break;</span>
+                <span class="s0">case '*':</span>
+                    <span class="s0">result = num1 * num2;</span>
+                    <span class="s0">break;</span>
+                <span class="s0">case '/':</span>
+                    <span class="s0">if (num2 == 0) {</span>
+                        <span class="s0">System.out.println(&quot;Ошибка: деление на ноль.&quot;);</span>
+                        <span class="s0">continue;</span>
+                    <span class="s0">}</span>
+                    <span class="s0">result = num1 / num2;</span>
+                    <span class="s0">break;</span>
+                <span class="s0">default:</span>
+                    <span class="s0">System.out.println(&quot;Неверная операция.&quot;);</span>
+                    <span class="s0">continue;</span>
+            <span class="s0">}</span>
+
+            <span class="s0">System.out.println(&quot;Результат: &quot; + result);</span>
+
+            <span class="s0">System.out.print(&quot;Хотите выполнить операцию над результатом? (да/нет): &quot;);</span>
+            <span class="s0">String answer = scanner.next();</span>
+
+            <span class="s0">if (answer.equalsIgnoreCase(&quot;да&quot;)) {</span>
+                <span class="s0">num1 = result;</span>
+                <span class="s0">System.out.print(&quot;Введите новое число: &quot;);</span>
+                <span class="s0">num2 = scanner.nextDouble();</span>
+
+                <span class="s0">System.out.print(&quot;Выберите операцию (+,-, *, /): &quot;);</span>
+                <span class="s0">operation = scanner.next().charAt(0);</span>
+
+                <span class="s0">switch (operation) {</span>
+                    <span class="s0">case '+':</span>
+                        <span class="s0">result = num1 + num2;</span>
+                        <span class="s0">break;</span>
+                    <span class="s0">case '-':</span>
+                        <span class="s0">result = num1 - num2;</span>
+                        <span class="s0">break;</span>
+                    <span class="s0">case '*':</span>
+                        <span class="s0">result = num1 * num2;</span>
+                        <span class="s0">break;</span>
+                    <span class="s0">case '/':</span>
+                        <span class="s0">if (num2 == 0) {</span>
+                            <span class="s0">System.out.println(&quot;Ошибка: деление на ноль.&quot;);</span>
+                            <span class="s0">continue;</span>
+                        <span class="s0">}</span>
+                        <span class="s0">result = num1 / num2;</span>
+                        <span class="s0">break;</span>
+                    <span class="s0">default:</span>
+                        <span class="s0">System.out.println(&quot;Неверная операция.&quot;);</span>
+                        <span class="s0">continue;</span>
+                <span class="s0">}</span>
+
+                <span class="s0">System.out.println(&quot;Новый результат: &quot; + result);</span>
+            <span class="s0">}</span>
+
+            <span class="s0">System.out.print(&quot;Хотите начать заново? (да/нет): &quot;);</span>
+            <span class="s0">String again = scanner.next();</span>
+            <span class="s0">continueOperation = again.equalsIgnoreCase(&quot;да&quot;);</span>
+        <span class="s0">}</span>
+        <span class="s0">System.out.println(&quot;Программа завершена.&quot;);</span>
+    <span class="s0">}</span>
+<span class="s0">}</span>
+
+<span class="s0">================================================================================</span>
+<span class="s0">ФАЙЛ: src/service/csv/dto/PersonCsvView.java</span>
+<span class="s0">РАЗМЕР: 587 B | ИЗМЕНЕН: ./src/service/csv/dto/PersonCsvView.java 74e6bfed00000000 255 3e72eff 4096 4096 124996863 33459712 33459712 18446744073709551615 -1</span>
+<span class="s0">2025-08-10 09:46:00.188475700</span>
+<span class="s0">--------------------------------------------------------------------------------</span>
+<span class="s0">package service.csv.dto;</span>
+
+<span class="s0">import com.opencsv.bean.CsvBindByName;</span>
+<span class="s0">import entity.person.Person;</span>
+
+<span class="s0">public class PersonCsvView {</span>
+
+        <span class="s0">@CsvBindByName</span>
+        <span class="s0">private String name;</span>
+
+        <span class="s0">@CsvBindByName</span>
+        <span class="s0">private int age;</span>
+
+        <span class="s0">public PersonCsvView() {}</span>
+
+        <span class="s0">public static PersonCsvView fromPerson(Person p) {</span>
+            <span class="s0">var view = new PersonCsvView();</span>
+            <span class="s0">view.name = p.getName();</span>
+            <span class="s0">view.age = p.getAge();</span>
+            <span class="s0">return view;</span>
+        <span class="s0">}</span>
+
+        <span class="s0">public Person toPerson() {</span>
+            <span class="s0">return new Person();</span>
+        <span class="s0">}</span>
+    <span class="s0">}</span>
+
+
+
+<span class="s0">================================================================================</span>
+<span class="s0">ФАЙЛ: src/service/CSVService.java</span>
+<span class="s0">РАЗМЕР: 1 KB | ИЗМЕНЕН: ./src/service/CSVService.java 74e6bfed00000000 255 3e72eff 4096 4096 124996863 33459712 33459712 18446744073709551615 -1</span>
+<span class="s0">2025-08-18 13:56:48.648772100</span>
+<span class="s0">--------------------------------------------------------------------------------</span>
+<span class="s0">package service;</span>
+
+<span class="s0">import com.opencsv.bean.CsvToBeanBuilder;</span>
+<span class="s0">import com.opencsv.bean.StatefulBeanToCsvBuilder;</span>
+<span class="s0">import entity.person.Person;</span>
+<span class="s0">import repository.PersonRepository;</span>
+<span class="s0">import service.csv.dto.PersonCsvView;</span>
+
+<span class="s0">import java.io.File;</span>
+<span class="s0">import java.io.IOException;</span>
+<span class="s0">import java.io.Reader;</span>
+<span class="s0">import java.io.Writer;</span>
+<span class="s0">import java.nio.file.Files;</span>
+<span class="s0">import java.util.List;</span>
+
+<span class="s0">public class CSVService {</span>
+    <span class="s0">private final String CSV_FILE = &quot;persons.csv&quot;;</span>
+    <span class="s0">private final PersonRepository personRepository = PersonRepository.getInstance();;</span>
+
+    <span class="s0">public void saveToCsv() {</span>
+        <span class="s0">try (Writer writer = Files.newBufferedWriter(new File(CSV_FILE).toPath())) {</span>
+            <span class="s0">var beans = personRepository.getPersons().stream().map(PersonCsvView::fromPerson).toList();</span>
+            <span class="s0">new StatefulBeanToCsvBuilder&lt;PersonCsvView&gt;(writer).build().write(beans);</span>
+            <span class="s0">System.out.println(&quot;Сохранено в CSV.&quot;);</span>
+        <span class="s0">} catch (Exception e) {</span>
+            <span class="s0">System.out.println(&quot;Ошибка при сохранении CSV: &quot; + e.getMessage());</span>
+        <span class="s0">}</span>
+    <span class="s0">}</span>
+
+    <span class="s0">public void loadFromCsv() {</span>
+        <span class="s0">try (Reader reader = Files.newBufferedReader(new File(CSV_FILE).toPath())) {</span>
+            <span class="s0">var csvList = new CsvToBeanBuilder&lt;PersonCsvView&gt;(reader)</span>
+                    <span class="s0">.withType(PersonCsvView.class)</span>
+                    <span class="s0">.build()</span>
+                    <span class="s0">.parse();</span>
+            <span class="s0">csvList.forEach(view -&gt; personRepository.getPersons().add(view.toPerson()));</span>
+            <span class="s0">System.out.println(&quot;Загружено из CSV.&quot;);</span>
+        <span class="s0">} catch (Exception e) {</span>
+            <span class="s0">System.out.println(&quot;Ошибка при чтении CSV: &quot; + e.getMessage());</span>
+        <span class="s0">}</span>
+    <span class="s0">}</span>
+
+    <span class="s0">public void printCsvFile() {</span>
+        <span class="s0">try {</span>
+            <span class="s0">System.out.println(Files.readString(new File(CSV_FILE).toPath()));</span>
+        <span class="s0">} catch (IOException e) {</span>
+            <span class="s0">System.out.println(&quot;Ошибка чтения CSV.&quot;);</span>
+        <span class="s0">}</span>
+    <span class="s0">}</span>
+<span class="s0">}</span>
+
+<span class="s0">================================================================================</span>
+<span class="s0">ФАЙЛ: src/service/JSONService.java</span>
+<span class="s0">РАЗМЕР: 1 KB | ИЗМЕНЕН: ./src/service/JSONService.java 74e6bfed00000000 255 3e72eff 4096 4096 124996863 33459648 33459648 18446744073709551615 -1</span>
+<span class="s0">2025-08-18 13:56:48.639407500</span>
+<span class="s0">--------------------------------------------------------------------------------</span>
+<span class="s0">package service;</span>
+
+<span class="s0">import com.fasterxml.jackson.core.type.TypeReference;</span>
+<span class="s0">import com.fasterxml.jackson.databind.ObjectMapper;</span>
+<span class="s0">import entity.person.Person;</span>
+<span class="s0">import repository.PersonRepository;</span>
+
+<span class="s0">import java.io.File;</span>
+<span class="s0">import java.io.IOException;</span>
+<span class="s0">import java.nio.file.Files;</span>
+<span class="s0">import java.util.List;</span>
+
+<span class="s0">public class JSONService {</span>
+    <span class="s0">private final ObjectMapper objectMapper = new ObjectMapper();</span>
+    <span class="s0">private final String JSON_FILE = &quot;persons.json&quot;;</span>
+    <span class="s0">private final PersonRepository personRepository = PersonRepository.getInstance();</span>
+
+    <span class="s0">public void saveToJson() {</span>
+        <span class="s0">try {</span>
+            <span class="s0">objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File(JSON_FILE), personRepository.getPersons());</span>
+            <span class="s0">System.out.println(&quot;Сохранено в JSON.&quot;);</span>
+        <span class="s0">} catch (IOException e) {</span>
+            <span class="s0">System.out.println(&quot;Ошибка при сохранении JSON: &quot; + e.getMessage());</span>
+        <span class="s0">}</span>
+    <span class="s0">}</span>
+    <span class="s0">public void loadFromJson() {</span>
+        <span class="s0">try {</span>
+            <span class="s0">File file = new File(JSON_FILE);</span>
+            <span class="s0">if (file.exists()) {</span>
+                <span class="s0">personRepository.getPersons().addAll(objectMapper.readValue(file, new TypeReference&lt;&gt;() {}));</span>
+                <span class="s0">System.out.println(&quot;Загружено из JSON.&quot;);</span>
+            <span class="s0">} else {</span>
+                <span class="s0">System.out.println(&quot;Файл JSON не найден.&quot;);</span>
+            <span class="s0">}</span>
+        <span class="s0">} catch (IOException e) {</span>
+            <span class="s0">System.out.println(&quot;Ошибка при чтении JSON: &quot; + e.getMessage());</span>
+        <span class="s0">}</span>
+    <span class="s0">}</span>
+    <span class="s0">public void printJsonFile() {</span>
+        <span class="s0">try {</span>
+            <span class="s0">System.out.println(Files.readString(new File(JSON_FILE).toPath()));</span>
+        <span class="s0">} catch (IOException e) {</span>
+            <span class="s0">System.out.println(&quot;Ошибка чтения JSON.&quot;);</span>
+        <span class="s0">}</span>
+    <span class="s0">}</span>
+<span class="s0">}</span>
+
+<span class="s0">================================================================================</span>
+<span class="s0">ФАЙЛ: src/service/PersonService.java</span>
+<span class="s0">РАЗМЕР: 1 KB | ИЗМЕНЕН: ./src/service/PersonService.java 74e6bfed00000000 255 3e72eff 4096 4096 124996863 33459648 33459648 18446744073709551615 -1</span>
+<span class="s0">2025-08-18 13:56:48.661237800</span>
+<span class="s0">--------------------------------------------------------------------------------</span>
+<span class="s0">package service;</span>
+
+<span class="s0">import com.github.javafaker.Faker;</span>
+<span class="s0">import entity.person.Person;</span>
+<span class="s0">import repository.PersonRepository;</span>
+
+<span class="s0">import java.util.Random;</span>
+<span class="s0">import java.util.Scanner;</span>
+
+<span class="s0">public class PersonService {</span>
+
+    <span class="s0">private final Scanner scanner = new Scanner(System.in);</span>
+    <span class="s0">private final Faker faker = new Faker();</span>
+    <span class="s0">private final Random random = new Random();</span>
+    <span class="s0">private final PersonRepository personRepository = PersonRepository.getInstance();</span>
+
+
+    <span class="s0">public void generatePersons() {</span>
+        <span class="s0">System.out.print(&quot;Сколько людей хотите создать? &quot;);</span>
+        <span class="s0">int count = scanner.nextInt();</span>
+        <span class="s0">scanner.nextLine();</span>
+
+        <span class="s0">for (int i = 0; i &lt; count; i++) {</span>
+            <span class="s0">String name = faker.name().fullName();</span>
+            <span class="s0">int age = random.nextInt(100) + 1;</span>
+            <span class="s0">personRepository.save(new Person(name, age, null));</span>
+        <span class="s0">}</span>
+
+        <span class="s0">System.out.println(&quot;Люди успешно созданы!&quot;);</span>
+    <span class="s0">}</span>
+
+    <span class="s0">public void printPersons() {</span>
+        <span class="s0">System.out.println(&quot;\nСписок людей:&quot;);</span>
+        <span class="s0">int i = 1;</span>
+        <span class="s0">for (Person person : personRepository.findAll()) {</span>
+            <span class="s0">System.out.println((i++) + &quot;. &quot; + person);</span>
+        <span class="s0">}</span>
+    <span class="s0">}</span>
+<span class="s0">}</span>
+
+<span class="s0">================================================================================</span>
+<span class="s0">ФАЙЛ: src/service/PetService.java</span>
+<span class="s0">РАЗМЕР: 4 KB | ИЗМЕНЕН: ./src/service/PetService.java 74e6bfed00000000 255 3e72eff 4096 4096 124996863 33459648 33459648 18446744073709551615 -1</span>
+<span class="s0">2025-08-18 13:56:48.627605700</span>
+<span class="s0">--------------------------------------------------------------------------------</span>
+<span class="s0">package service;</span>
+
+<span class="s0">import entity.person.Person;</span>
+<span class="s0">import entity.pet.*;</span>
+<span class="s0">import repository.PersonRepository;</span>
+
+<span class="s0">import java.util.ArrayList;</span>
+<span class="s0">import java.util.List;</span>
+<span class="s0">import java.util.Random;</span>
+<span class="s0">import java.util.Scanner;</span>
+
+<span class="s0">public class PetService {</span>
+    <span class="s0">private final List&lt;Pet&gt; pets = new ArrayList&lt;&gt;();</span>
+    <span class="s0">private final PersonRepository personRepository = PersonRepository.getInstance();</span>
+    <span class="s0">private final Scanner scanner = new Scanner(System.in);</span>
+
+
+
+    <span class="s0">private final String[] names = {&quot;Барсик&quot;, &quot;Мурка&quot;, &quot;Шарик&quot;, &quot;Том&quot;, &quot;Лаки&quot;, &quot;Рекс&quot;, &quot;Снежок&quot;, &quot;Рыжик&quot;};</span>
+    <span class="s0">private final String[] breeds = {&quot;Сиамский&quot;, &quot;Бульдог&quot;, &quot;Мейн-кун&quot;, &quot;Доберман&quot;, &quot;Сфинкс&quot;, &quot;Дворовый&quot;};</span>
+    <span class="s0">private final Random random = new Random();</span>
+
+    <span class="s0">public void generatePets() {</span>
+        <span class="s0">System.out.print(&quot;Сколько питомцев хотите создать? &quot;);</span>
+        <span class="s0">int count = scanner.nextInt();</span>
+        <span class="s0">scanner.nextLine();</span>
+        <span class="s0">for (int i = 0; i &lt; count; i++) {</span>
+            <span class="s0">String petName = names[random.nextInt(names.length)];</span>
+            <span class="s0">int petAge = random.nextInt(15) + 1;</span>
+            <span class="s0">String petBreed = breeds[random.nextInt(breeds.length)];</span>
+            <span class="s0">int type = random.nextInt(4) + 1;</span>
+
+            <span class="s0">Pet pet = switch (type) {</span>
+                <span class="s0">case 1 -&gt; new Dog(petName, petAge, petBreed);</span>
+                <span class="s0">case 2 -&gt; new Cat(petName, petAge, petBreed);</span>
+                <span class="s0">case 3 -&gt; new Mouse(petName, petAge, petBreed);</span>
+                <span class="s0">case 4 -&gt; new Rat(petName, petAge, petBreed);</span>
+                <span class="s0">default -&gt; null;</span>
+            <span class="s0">};</span>
+
+            <span class="s0">if (pet != null) {</span>
+                <span class="s0">pets.add(pet);</span>
+            <span class="s0">}</span>
+        <span class="s0">}</span>
+        <span class="s0">System.out.println(count + &quot; питомцев создано.&quot;);</span>
+    <span class="s0">}</span>
+
+    <span class="s0">public void printAllPets() {</span>
+        <span class="s0">if (pets.isEmpty()) {</span>
+            <span class="s0">System.out.println(&quot;Список питомцев пуст.&quot;);</span>
+            <span class="s0">return;</span>
+        <span class="s0">}</span>
+
+        <span class="s0">System.out.println(&quot;\nВсе питомцы:&quot;);</span>
+        <span class="s0">for (int i = 0; i &lt; pets.size(); i++) {</span>
+            <span class="s0">System.out.printf(&quot;%d. %s%n&quot;, i + 1, pets.get(i));</span>
+        <span class="s0">}</span>
+    <span class="s0">}</span>
+
+    <span class="s0">public void assignPetsToPersons() {</span>
+
+        <span class="s0">if (pets.isEmpty()) {</span>
+            <span class="s0">System.out.println(&quot;Сначала создайте питомцев.&quot;);</span>
+            <span class="s0">return;</span>
+        <span class="s0">}</span>
+
+        <span class="s0">if (personRepository.getPersons().isEmpty()) {</span>
+            <span class="s0">System.out.println(&quot;Сначала создайте людей.&quot;);</span>
+            <span class="s0">return;</span>
+        <span class="s0">}</span>
+
+        <span class="s0">for (Pet pet : pets) {</span>
+            <span class="s0">Person person = personRepository.getPersons().get(random.nextInt(personRepository.getPersons().size()));</span>
+            <span class="s0">person.addPet(pet);</span>
+            <span class="s0">System.out.printf(&quot;Питомец %s назначен %s%n&quot;, pet.getName(), person.getName());</span>
+        <span class="s0">}</span>
+
+        <span class="s0">pets.clear();</span>
+        <span class="s0">System.out.println(&quot;Все питомцы назначены.&quot;);</span>
+    <span class="s0">}</span>
+
+    <span class="s0">public void findPetsByParams() {</span>
+        <span class="s0">System.out.print(&quot;Введите имя (или пусто): &quot;);</span>
+        <span class="s0">String name = scanner.nextLine().trim();</span>
+
+        <span class="s0">System.out.print(&quot;Введите возраст (или пусто): &quot;);</span>
+        <span class="s0">String ageInput = scanner.nextLine().trim();</span>
+        <span class="s0">Integer age = ageInput.isEmpty() ? null : Integer.parseInt(ageInput);</span>
+
+        <span class="s0">System.out.print(&quot;Введите породу (или пусто): &quot;);</span>
+        <span class="s0">String breed = scanner.nextLine().trim();</span>
+
+        <span class="s0">List&lt;Pet&gt; found = new ArrayList&lt;&gt;();</span>
+
+        <span class="s0">for (Person person : personRepository.getPersons()) {</span>
+            <span class="s0">for (Pet pet : person.getPets()) {</span>
+                <span class="s0">boolean matches =</span>
+                        <span class="s0">(name.isEmpty() || pet.getName().equalsIgnoreCase(name)) &amp;&amp;</span>
+                                <span class="s0">(age == null || pet.getAge() == age) &amp;&amp;</span>
+                                <span class="s0">(breed.isEmpty() || pet.getBreed().equalsIgnoreCase(breed));</span>
+
+                <span class="s0">if (matches) {</span>
+                    <span class="s0">found.add(pet);</span>
+                <span class="s0">}</span>
+            <span class="s0">}</span>
+        <span class="s0">}</span>
+
+        <span class="s0">if (found.isEmpty()) {</span>
+            <span class="s0">System.out.println(&quot;Ничего не найдено.&quot;);</span>
+        <span class="s0">} else {</span>
+            <span class="s0">System.out.println(&quot;Результаты поиска:&quot;);</span>
+            <span class="s0">found.forEach(System.out::println);</span>
+        <span class="s0">}</span>
+    <span class="s0">}</span>
+<span class="s0">}</span>
+
+<span class="s0">================================================================================</span>
+<span class="s0">СТАТИСТИКА:</span>
+<span class="s0">--------------------------------------------------------------------------------</span>
+<span class="s0">Обработано файлов: 33</span>
+<span class="s0">Пропущено файлов: 1</span>
+<span class="s0">Общий размер обработанных файлов: 64 KB</span>
+<span class="s0">================================================================================</span>
+</pre>
+</body>
+</html>
